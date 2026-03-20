@@ -7,24 +7,24 @@
   <!-- SEO primário -->
   <title>OrthoCal – Calculadora Ortodôntica | STL Viewer, DICOM, Dentição Mista e Permanente</title>
   <meta name="description" content="OrthoCal é o app de referência para ortodontistas. Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes. Disponível no iOS, Android e macOS." />
-  <meta name="keywords" content="calculadora ortodontica, ortodontia app, STL viewer ortodontia, DICOM ortodontia, dentição mista, dentição permanente, ortocal, orthocal, app ortodontista, software ortodontia, visualizador STL, visualizador DICOM, calculo cefalometrico" />
+  <meta name="keywords" content="análise stl ortodontia, bolton stl, wolford stl, scanner intraoral análise, orthocal stl, dental analysis stl, orthodontic stl app, stl, dicom, orthocal, app ortodontia, cadastro paciente ortodontia, software ortodontia, app dentista, ortho app, orthodontic software, orthodontic app, analises, ortodontica, calculadora ortodontica, STL viewer ortodontia, DICOM ortodontia, dentição mista, dentição permanente, ortocal, app ortodontista, visualizador STL, visualizador DICOM, calculo cefalometrico, intraoral scanner analysis, orthodontic 3d model, modelo 3d ortodontia" />
   <meta name="author" content="OrthoCal" />
   <meta name="google-site-verification" content="QGU-5zztFUfODQyUAWY5gloaXlTbIh2CbvkIHGiy5S4" />
-  <link rel="canonical" href="https://orthocal.app/" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/" />
   <link rel="icon" type="image/png" href="orthocal-icon.png" />
 
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://orthocal.app/" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/" />
   <meta property="og:title" content="OrthoCal – O App de Referência para Ortodontistas" />
   <meta property="og:description" content="Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes. O app mais completo para ortodontistas." />
-  <meta property="og:image" content="https://orthocal.app/og-image.png" />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="OrthoCal – O App de Referência para Ortodontistas" />
   <meta name="twitter:description" content="Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes." />
-  <meta name="twitter:image" content="https://orthocal.app/og-image.png" />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
 
   <link rel="stylesheet" href="style.css">
   <!-- Schema.org – App -->
@@ -33,9 +33,13 @@
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "OrthoCal",
-    "description": "Calculadora ortodôntica completa com visualizador STL, DICOM, dentição mista e permanente e gestão de pacientes.",
+    "alternateName": ["OrthoCal App", "Orthocal Ortodontia", "Ortho Cal"],
+    "description": "OrthoCal é o app de ortodontia para análise de Bolton, Wolford e Moyers, cálculo de dentição mista e permanente, visualizador STL de modelos de scanner intraoral, visualizador DICOM com MPR, e gestão de pacientes. Disponível para iOS, Android e macOS.",
     "operatingSystem": "iOS, Android, macOS",
     "applicationCategory": "MedicalApplication",
+    "applicationSubCategory": "Orthodontic Software",
+    "keywords": "Bolton analysis, Wolford analysis, Moyers analysis, STL viewer, DICOM viewer, CBCT, mixed dentition, permanent dentition, intraoral scanner, orthodontic app",
+    "url": "https://sitedc.online/orthocal/",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -43,8 +47,8 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "128"
+      "ratingValue": "5.0",
+      "reviewCount": "13"
     }
   }
   </script>
@@ -60,7 +64,7 @@
         "name": "O que é o OrthoCal?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "OrthoCal é um aplicativo para ortodontistas que permite calcular dentição mista e permanente, visualizar arquivos STL e DICOM, e gerenciar pacientes, tudo em um único app."
+          "text": "OrthoCal é um aplicativo para ortodontistas com análise de Bolton, Wolford, Moyers, cálculo de dentição mista e permanente, visualizador STL de modelos de scanner intraoral, visualizador DICOM/CBCT com MPR e gestão de pacientes, tudo em um único app para iOS, Android e macOS."
         }
       },
       {
@@ -91,7 +95,7 @@
     <img src="orthocal-icon.png" alt="OrthoCal" style="width:36px;height:36px;border-radius:8px;">
     OrthoCal
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#benefits" data-i18n="nav_features">Funcionalidades</a></li>
     <li><a href="#videos" data-i18n="nav_demo">Demonstração</a></li>
     <li><a href="#reviews" data-i18n="nav_reviews">Avaliações</a></li>
@@ -104,6 +108,9 @@
       <button class="lang-btn" data-lang="es" type="button">🇪🇸 ES</button>
     </div>
     <a class="nav-cta" href="#download" data-i18n="nav_cta">Baixar agora</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -154,7 +161,7 @@
     <div class="dl-card">
       <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:52px;height:52px;"></div>
       <div class="dl-platform" data-i18n="dl_platform_ios">iPhone &amp; iPad</div>
-      <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_ios">iOS 14+</p>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_ios">iOS 14+</p> -->
       <a href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/orthocal/id6636519508&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code App Store" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
       </a>
@@ -163,7 +170,7 @@
     <div class="dl-card">
       <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" style="width:52px;height:52px;"></div>
       <div class="dl-platform" data-i18n="dl_platform_android">Android</div>
-      <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_android">Android 8+</p>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_android">Android 8+</p> -->
       <a href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Google Play" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
       </a>
@@ -172,7 +179,7 @@
     <div class="dl-card">
       <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="macOS" style="width:44px;height:52px;filter:invert(1) brightness(0);"></div>
       <div class="dl-platform" data-i18n="dl_platform_mac">macOS</div>
-      <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_mac">macOS 11+</p>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_mac">macOS 11+</p> -->
       <a href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/orthocal/id6636519508&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Mac App Store" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
       </a>
@@ -192,27 +199,27 @@
     <div class="benefit-card">
       <div class="benefit-icon">🦷</div>
       <h3 data-i18n="ben1_title">Dentição Mista</h3>
-      <p data-i18n="ben1_desc">Cálculo preciso do espaço disponível e necessário na dentição mista. Métodos de Tanaka-Johnston e Moyers integrados.</p>
+      <p data-i18n="ben1_desc">Cálculo preciso do espaço disponível e necessário na dentição mista. Métodos de Moyers integrados.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">📐</div>
       <h3 data-i18n="ben2_title">Dentição Permanente</h3>
-      <p data-i18n="ben2_desc">Análise completa da dentição permanente com cálculos de Bolton, discrepância ósseo-dentária e índice de irregularidade.</p>
+      <p data-i18n="ben2_desc">Análise completa da dentição permanente com cálculos de Bolton, discrepância ósseo-dentária.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">🖼️</div>
       <h3 data-i18n="ben3_title">Visualizador STL</h3>
-      <p data-i18n="ben3_desc">Abra e visualize modelos 3D no formato STL diretamente no app, com rotação, zoom e medições em tempo real.</p>
+      <p data-i18n="ben3_desc">Abra e visualize modelos 3D no formato STL diretamente no app, com rotação, zoom e medições.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">🔬</div>
       <h3 data-i18n="ben4_title">Visualizador DICOM</h3>
-      <p data-i18n="ben4_desc">Visualize tomografias e radiografias no formato DICOM com suporte a MPR (reconstrução multiplanar).</p>
+      <p data-i18n="ben4_desc">Visualize tomografias e radiografias no formato DICOM com suporte a MPR.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">👥</div>
       <h3 data-i18n="ben5_title">Gestão de Pacientes</h3>
-      <p data-i18n="ben5_desc">Cadastre e gerencie pacientes, vincule cálculos e arquivos diretamente ao prontuário de cada paciente.</p>
+      <p data-i18n="ben5_desc">Cadastre e gerencie pacientes, vincule cálculos diretamente ao prontuário de cada paciente.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-icon">✈️</div>
@@ -238,7 +245,7 @@
   <h2 class="section-title" style="margin-bottom:12px;" data-i18n="vid_title">Veja o OrthoCal em ação</h2>
   <p class="section-sub" style="margin-bottom:48px;" data-i18n="vid_sub">Assista e veja como é simples usar no dia a dia.</p>
   <div class="videos-grid">
-    <div class="video-wrap">
+    <!-- <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/EqzAD8rHjTw?autoplay=1&mute=1&loop=1&playlist=EqzAD8rHjTw&rel=0"
         title="OrthoCal – Dentição Mista e Permanente"
@@ -246,11 +253,38 @@
         allowfullscreen
         loading="lazy">
       </iframe>
+    </div> -->
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/_34G5FyNAVs?autoplay=1&mute=1&loop=1&playlist=_34G5FyNAVs&rel=0"
+        title="OrthoCal – STL Análise Ortodôntica"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     </div>
     <div class="video-wrap">
       <iframe
-        src="https://www.youtube.com/embed/EqzAD8rHjTw?autoplay=1&mute=1&loop=1&playlist=EqzAD8rHjTw&rel=0&start=10"
-        title="OrthoCal – Visualizador STL e DICOM"
+        src="https://www.youtube.com/embed/4fBP_PzoCmo?autoplay=1&mute=1&loop=1&playlist=4fBP_PzoCmo&rel=0"
+        title="OrthoCal – Análise STL Ortodontia"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/JY5uiaY1P3w?autoplay=1&mute=1&loop=1&playlist=JY5uiaY1P3w&rel=0"
+        title="OrthoCal – App Ortodontia STL DICOM"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/9Te_GzHKyOw?autoplay=1&mute=1&loop=1&playlist=9Te_GzHKyOw&rel=0"
+        title="OrthoCal – Software Ortodontia"
         allow="autoplay; encrypted-media"
         allowfullscreen
         loading="lazy">
@@ -263,7 +297,7 @@
 <section id="reviews">
   <div class="section-tag" data-i18n="nav_reviews">Avaliações</div>
   <h2 class="section-title" data-i18n="rev_title">O que os ortodontistas dizem</h2>
-  <p class="section-sub" data-i18n="rev_sub">Avaliações reais das lojas App Store e Google Play.</p>
+  <!-- <p class="section-sub" data-i18n="rev_sub">Avaliações reais das lojas App Store e Google Play.</p> -->
 
   <div style="display:flex;gap:16px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;">
     <div class="rating-badge">
@@ -271,7 +305,6 @@
       <div class="rating-info">
         <div class="stars">★★★★★</div>
         <div data-i18n="rev_store_ios">App Store · Brasil</div>
-        <small>4 avaliações</small>
       </div>
     </div>
     <div class="rating-badge" style="background:var(--accent);">
@@ -279,7 +312,6 @@
       <div class="rating-info">
         <div class="stars">★★★★★</div>
         <div data-i18n="rev_store_android">Google Play</div>
-        <small>9 avaliações</small>
       </div>
     </div>
   </div>
@@ -380,16 +412,16 @@
   </div>
   <div class="faq-item">
     <div class="faq-q" data-i18n="faq2_q">O app é gratuito?</div>
-    <div class="faq-a" data-i18n="faq2_a">Sim, o download é gratuito. Os cálculos de dentição mista e permanente são completamente gratuitos. O Visualizador DICOM requer uma assinatura com 7 dias grátis.</div>
+    <div class="faq-a" data-i18n="faq2_a">Sim, o download é gratuito. Os cálculos de dentição mista e permanente são completamente gratuitos. O Visualizador DICOM e STL requer uma assinatura com 7 dias grátis.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q" data-i18n="faq3_q">Funciona sem internet?</div>
     <div class="faq-a" data-i18n="faq3_a">Sim. Todos os cálculos de dentição e o visualizador STL funcionam offline. Assinantes ativos também acessam o DICOM Viewer sem internet.</div>
   </div>
-  <div class="faq-item">
+  <!-- <div class="faq-item">
     <div class="faq-q" data-i18n="faq4_q">Quais plataformas são suportadas?</div>
-    <div class="faq-a" data-i18n="faq4_a">iOS (iPhone e iPad com iOS 14+), Android (8+) e macOS (11+).</div>
-  </div>
+    <div class="faq-a" data-i18n="faq4_a">iOS (iPhone e iPad), Android e macOS.</div>
+  </div> -->
   <div class="faq-item">
     <div class="faq-q" data-i18n="faq5_q">Quais formatos de arquivo são suportados?</div>
     <div class="faq-a" data-i18n="faq5_a">O OrthoCal suporta arquivos STL para modelos 3D e arquivos DICOM (.dcm) para tomografias e radiografias digitais.</div>
@@ -426,9 +458,9 @@
   <p style="margin-bottom:12px;">
     <a href="https://sitedc.online/politicaPrivacidade/privacidadeorthocal.html" data-i18n="footer_privacy">Política de Privacidade</a>
     <a href="https://sitedc.online/politicaPrivacidade/termosorthocal.html" data-i18n="footer_terms">Termos de Uso</a>
-    <a href="mailto:suporte@orthocal.app" data-i18n="footer_contact">Contato</a>
+    <!-- <a href="mailto:suporte@orthocal.app" data-i18n="footer_contact">Contato</a> -->
   </p>
-  <p>© 2026 OrthoCal. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+  <p>© 2024 OrthoCal. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
 </footer>
 <script src="index.js"></script>
 
