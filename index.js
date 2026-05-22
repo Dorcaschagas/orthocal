@@ -11,7 +11,7 @@ const translations = {
 
         hero_badge: '⭐ App #1 para Ortodontistas',
         hero_h1: 'A calculadora para Análises<br /><span>mais completa do mercado</span>',
-        hero_p: 'Análise de Bolton, Wolford e Moyers, visualizador STL para scanner intraoral, DICOM/CBCT com MPR e gestão de pacientes — tudo em um único app. Usado por ortodontistas em mais de 15 países.',
+        hero_p: 'Análise de Bolton, Wolford e Moyers, visualizador STL para scanner intraoral, DICOM/CBCT com MPR e reconstrução 3D, e gestão de pacientes — tudo em um único app. Usado por ortodontistas em mais de 15 países.',
         hero_btn1: '📲 Baixar agora',
         hero_btn2: '▶ Ver demonstração',
 
@@ -50,6 +50,8 @@ const translations = {
         ben7_desc: 'Interface disponível em Português, Inglês e Espanhol. Ideal para profissionais em qualquer país.',
         ben8_title: 'Multiplataforma',
         ben8_desc: 'iOS, Android e macOS. Use no celular no consultório e no Mac para apresentações e estudos.',
+        ben9_title: 'Reconstrução 3D',
+        ben9_desc: 'Reconstrução volumétrica 3D a partir de tomografias CBCT. Visualize a arcada e estruturas ósseas em três dimensões.',
 
         vid_title: 'Veja o OrthoCal em ação',
         vid_sub: 'Assista e veja como é simples usar no dia a dia do consultório.',
@@ -61,7 +63,7 @@ const translations = {
 
         faq_title: 'Perguntas frequentes',
         faq1_q: 'O que é o OrthoCal?',
-        faq1_a: 'OrthoCal é um aplicativo para ortodontistas que reúne cálculos de dentição mista e permanente, visualizador de modelos STL, visualizador DICOM com MPR e gestão de pacientes em um único app.',
+        faq1_a: 'OrthoCal é um aplicativo para ortodontistas que reúne cálculos de dentição mista e permanente, visualizador de modelos STL, visualizador DICOM com MPR e reconstrução 3D, e gestão de pacientes em um único app.',
         faq2_q: 'O app é gratuito?',
         faq2_a: 'Sim, o download é gratuito. Os cálculos de dentição mista e permanente são completamente gratuitos. O Visualizador DICOM e STL requer uma assinatura com 7 dias grátis.',
         faq3_q: 'Funciona sem internet?',
@@ -93,7 +95,7 @@ const translations = {
 
         hero_badge: '⭐ #1 App for Orthodontists',
         hero_h1: 'The analysis calculator<br /><span>most complete on the market</span>',
-        hero_p: 'Mixed and permanent dentition, STL and DICOM viewer, patient management — all in one app. Used by orthodontists in over 15 countries.',
+        hero_p: 'Mixed and permanent dentition, STL viewer, DICOM/CBCT with MPR and 3D reconstruction, patient management — all in one app. Used by orthodontists in over 15 countries.',
         hero_btn1: '📲 Download now',
         hero_btn2: '▶ Watch demo',
 
@@ -132,6 +134,8 @@ const translations = {
         ben7_desc: 'Interface available in Portuguese, English and Spanish. Ideal for professionals in any country.',
         ben8_title: 'Multiplatform',
         ben8_desc: 'iOS, Android and macOS. Use on your phone in the office and on Mac for presentations and studies.',
+        ben9_title: '3D Reconstruction',
+        ben9_desc: 'Volumetric 3D reconstruction from CBCT scans. Visualize the arch and bone structures in three dimensions.',
 
         vid_title: 'See OrthoCal in action',
         vid_sub: 'Watch and see how simple it is to use in daily practice.',
@@ -143,7 +147,7 @@ const translations = {
 
         faq_title: 'Frequently asked questions',
         faq1_q: 'What is OrthoCal?',
-        faq1_a: 'OrthoCal is an app for orthodontists that brings together mixed and permanent dentition calculations, STL model viewer, DICOM viewer with MPR and patient management in one app.',
+        faq1_a: 'OrthoCal is an app for orthodontists that brings together mixed and permanent dentition calculations, STL model viewer, DICOM viewer with MPR and 3D reconstruction, and patient management in one app.',
         faq2_q: 'Is the app free?',
         faq2_a: 'Yes, the download is free. Mixed and permanent dentition calculations are completely free. The DICOM Viewer requires a subscription with 7 days free.',
         faq3_q: 'Does it work offline?',
@@ -175,7 +179,7 @@ const translations = {
 
         hero_badge: '⭐ App #1 para Ortodoncistas',
         hero_h1: 'La calculadora para Análisis<br /><span>más completa del mercado</span>',
-        hero_p: 'Dentición mixta y permanente, visor STL y DICOM, gestión de pacientes — todo en una sola app. Usada por ortodoncistas en más de 15 países.',
+        hero_p: 'Dentición mixta y permanente, visor STL, DICOM/CBCT con MPR y reconstrucción 3D, gestión de pacientes — todo en una sola app. Usada por ortodoncistas en más de 15 países.',
         hero_btn1: '📲 Descargar ahora',
         hero_btn2: '▶ Ver demostración',
 
@@ -214,6 +218,8 @@ const translations = {
         ben7_desc: 'Interfaz disponible en Portugués, Inglés y Español. Ideal para profesionales en cualquier país.',
         ben8_title: 'Multiplataforma',
         ben8_desc: 'iOS, Android y macOS. Úsalo en el celular en el consultorio y en Mac para presentaciones.',
+        ben9_title: 'Reconstrucción 3D',
+        ben9_desc: 'Reconstrucción volumétrica 3D a partir de tomografías CBCT. Visualiza la arcada y estructuras óseas en tres dimensiones.',
 
         vid_title: 'Ve OrthoCal en acción',
         vid_sub: 'Mira lo simple que es usar en el día a día del consultorio.',
@@ -225,7 +231,7 @@ const translations = {
 
         faq_title: 'Preguntas frecuentes',
         faq1_q: '¿Qué es OrthoCal?',
-        faq1_a: 'OrthoCal es una app para ortodoncistas que reúne cálculos de dentición mixta y permanente, visor de modelos STL, visor DICOM con MPR y gestión de pacientes en una sola app.',
+        faq1_a: 'OrthoCal es una app para ortodoncistas que reúne cálculos de dentición mixta y permanente, visor de modelos STL, visor DICOM con MPR y reconstrucción 3D, y gestión de pacientes en una sola app.',
         faq2_q: '¿La app es gratuita?',
         faq2_a: 'Sí, la descarga es gratuita. Los cálculos de dentición mixta y permanente son completamente gratuitos. El Visor DICOM requiere una suscripción con 7 días gratis.',
         faq3_q: '¿Funciona sin internet?',
