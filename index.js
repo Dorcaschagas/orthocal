@@ -24,6 +24,26 @@ document.querySelectorAll('.theme-btn').forEach(function (btn) {
 applyTheme(detectTheme());
 
 // ══════════════════════════════════════════
+//  Mobile nav (hamburger)
+// ══════════════════════════════════════════
+const navHamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+if (navHamburger && navLinks) {
+    navHamburger.addEventListener('click', function () {
+        const isOpen = navLinks.classList.toggle('open');
+        navHamburger.classList.toggle('open', isOpen);
+        navHamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            navLinks.classList.remove('open');
+            navHamburger.classList.remove('open');
+            navHamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+// ══════════════════════════════════════════
 //  i18n – Translations
 // ══════════════════════════════════════════
 const translations = {

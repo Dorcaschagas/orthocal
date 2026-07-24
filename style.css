@@ -165,9 +165,11 @@ nav {
     .nav-links li a { display: block; padding: 12px 24px; font-size: 1rem; }
     .nav-hamburger { display: flex; }
     .nav-cta { display: none; }
-    .lang-btn { padding: 4px 7px; font-size: .7rem; }
-    .lang-switcher { gap: 2px; padding: 3px; }
+    .lang-btn { padding: 3px 5px; font-size: .6rem; }
+    .lang-switcher { gap: 1px; padding: 2px; }
     .theme-btn { width: 22px; height: 22px; font-size: .8rem; }
+    .nav-logo { font-size: 1.1rem; gap: 6px !important; }
+    .nav-logo img { width: 28px; height: 28px; }
     .nav-dropdown-menu {
         display: block; position: static; box-shadow: none;
         background: transparent; padding: 0 0 0 24px;
