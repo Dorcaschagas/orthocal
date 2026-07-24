@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Análise de Bolton Ortodôntica Online e no App | OrthoCal</title>
+  <meta name="description" content="Entenda a análise de Bolton, índice anterior e total, e veja como o OrthoCal calcula a discrepância dentária automaticamente no seu celular." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/bolton/" />
+  <link rel="icon" type="image/png" href="../orthocal-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/bolton/" />
+  <meta property="og:title" content="Análise de Bolton — o que é e como calcular | OrthoCal" />
+  <meta property="og:description" content="Entenda a análise de Bolton, índice anterior e total, e veja como o OrthoCal calcula a discrepância dentária automaticamente no seu celular." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Análise de Bolton — o que é e como calcular | OrthoCal" />
+  <meta name="twitter:description" content="Entenda a análise de Bolton, índice anterior e total, e veja como o OrthoCal calcula a discrepância dentária automaticamente no seu celular." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+  .article-content { max-width: 780px; margin: 0 auto; padding: 72px 5vw; }
+  .article-content h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color:var(--text); margin: 40px 0 16px; }
+  .article-content h3 { font-size: 1.15rem; font-weight: 700; color:var(--text); margin: 28px 0 12px; }
+  .article-content p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: 1.02rem; }
+  .article-content ul, .article-content ol { color: var(--gray); line-height: 1.8; margin: 0 0 20px 24px; }
+  .article-content li { margin-bottom: 8px; }
+  .article-content a { color: var(--primary); font-weight: 600; }
+  .internal-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .internal-links a { background: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: 20px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .internal-links a:hover { background: var(--primary); color: #fff; }
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "OrthoCal",
+      "item": "https://sitedc.online/orthocal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Análise de Bolton",
+      "item": "https://sitedc.online/orthocal/bolton/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Análise de Bolton",
+  "description": "Guia completo sobre a análise de Bolton em ortodontia: índice anterior, índice total e como o OrthoCal automatiza o cálculo.",
+  "url": "https://sitedc.online/orthocal/bolton/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "OrthoCal",
+    "url": "https://sitedc.online/orthocal/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "OrthoCal",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "iOS, Android, macOS"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que a análise de Bolton mede?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mede a proporção entre o tamanho mesiodistal dos dentes superiores e inferiores, indicando se há excesso ou falta de material dentário em uma das arcadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre índice anterior e índice total de Bolton?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O índice anterior considera apenas os seis dentes anteriores de cada arcada. O índice total considera os 12 dentes de canino a canino, incluindo pré-molares e primeiros molares."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quando a discrepância de Bolton é clinicamente relevante?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Discrepâncias acima de aproximadamente 2 mm costumam ser consideradas clinicamente significativas e podem exigir desgaste interproximal, expansão ou outra estratégia de compensação."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O OrthoCal calcula Bolton automaticamente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Basta inserir as medidas mesiodistais dos dentes e o app calcula o índice anterior e o total, comparando com as médias de referência de Bolton."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+<main id="main-content">
+
+<!-- ══ INTRO / HERO ══ -->
+<section id="intro-hero" style="background:var(--light);padding:100px 5vw 60px;text-align:center;">
+  <div style="max-width:820px;margin:0 auto;">
+    <img src="../orthocal-icon.png" alt="OrthoCal" style="width:72px;height:72px;border-radius:18px;margin-bottom:20px;box-shadow:0 8px 24px rgba(108,63,245,.25);">
+    <h1 data-i18n="bolton_h1" style="font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;color:var(--text);margin-bottom:20px;line-height:1.2;">Análise de Bolton: calcule a discrepância dentária em segundos</h1>
+    <p data-i18n="bolton_intro_p" style="font-size:1.1rem;color:var(--gray);margin-bottom:32px;line-height:1.7;">A análise de Bolton compara o tamanho dos dentes superiores e inferiores para identificar discrepâncias que afetam oclusão e finalização do caso. Veja como funciona e como o OrthoCal automatiza esse cálculo.</p>
+    <a class="btn-primary" data-i18n="cta_download_btn" href="#cta-final">📲 Baixar o OrthoCal</a>
+  </div>
+</section>
+
+<div class="article-content">
+
+<h2 data-i18n="bolton_h2_1">O que é a análise de Bolton</h2>
+<p data-i18n="bolton_p_1">A análise de Bolton é um método criado por Wayne Bolton na década de 1950 para avaliar a proporção entre a largura mesiodistal dos dentes da arcada superior e da arcada inferior. O objetivo é identificar discrepâncias de tamanho dentário que podem comprometer o relacionamento oclusal, mesmo quando o alinhamento dos dentes parece adequado.</p>
+<p data-i18n="bolton_p_2">Sem essa análise, é possível finalizar um tratamento ortodôntico com overjet ou overbite incorretos simplesmente porque os dentes superiores e inferiores não têm proporção compatível entre si — um problema que nenhum alinhamento por si só resolve.</p>
+
+<h2 data-i18n="bolton_h2_2">Índice anterior e índice total</h2>
+<p data-i18n="bolton_p_3">A análise de Bolton se divide em duas medidas principais:</p>
+<ul>
+  <li data-i18n="bolton_li_1"><strong>Índice anterior:</strong> considera apenas os seis dentes anteriores (canino a canino) de cada arcada. É o mais usado no dia a dia clínico porque impacta diretamente overjet e overbite.</li>
+  <li data-i18n="bolton_li_2"><strong>Índice total:</strong> considera os 12 dentes de canino a canino, incluindo pré-molares e, quando presentes, primeiros molares. Serve para avaliar a relação de oclusão posterior.</li>
+</ul>
+<p data-i18n="bolton_p_4">O cálculo consiste em somar as larguras mesiodistais dos dentes inferiores, dividir pela soma das larguras dos dentes superiores correspondentes e multiplicar por 100. O resultado é comparado às médias estabelecidas por Bolton em sua pesquisa original.</p>
+
+<h3 data-i18n="bolton_h3_1">Como interpretar o resultado</h3>
+<p data-i18n="bolton_p_5">Quando o índice calculado está acima da média esperada, geralmente há excesso de material dentário inferior — o que pode indicar a necessidade de desgaste interproximal (stripping) nos dentes inferiores. Quando está abaixo, o excesso costuma estar nos dentes superiores.</p>
+
+<h2 data-i18n="bolton_h2_3">Por que ortodontistas usam a análise de Bolton</h2>
+<p data-i18n="bolton_p_6">A análise entra no planejamento do caso antes de decidir sobre extrações, desgastes interproximais ou expansões. Ignorá-la é um dos motivos mais comuns de recidiva ou de dificuldade para fechar espaços residuais na fase final do tratamento.</p>
+
+<h2 data-i18n="bolton_h2_4">Como o OrthoCal automatiza o cálculo de Bolton</h2>
+<p data-i18n="bolton_p_7">No OrthoCal, basta inserir as medidas mesiodistais dos dentes (obtidas com paquímetro digital ou a partir de um modelo STL escaneado) e o app calcula automaticamente o índice anterior e o índice total, comparando com as médias de Bolton e indicando a discrepância em milímetros. Isso elimina cálculos manuais repetitivos e reduz erro humano na hora de decidir a conduta clínica.</p>
+
+
+<h2 data-i18n="bolton_h2_5">Onde o OrthoCal entra</h2>
+<p data-i18n="bolton_p_8">O OrthoCal calcula os índices anterior e total de Bolton automaticamente a partir das medidas dentárias informadas, e pode integrar essas medições diretamente do visualizador STL — sem precisar transportar números entre planilhas ou calculadoras separadas.</p>
+
+<h3 data-i18n="continue_exploring">Continue explorando</h3>
+<div class="internal-links">
+  <a href="/orthocal/denticao-permanente/" data-i18n="link_denticao_permanente">Dentição Permanente</a>
+  <a href="/orthocal/stl-viewer/" data-i18n="link_stl_viewer">Visualizador STL</a>
+  <a href="/orthocal/wolford/" data-i18n="link_wolford">Análise de Wolford</a>
+  <a href="../" data-i18n="link_home">Página inicial</a>
+  <a href="/orthocal/blog/" data-i18n="nav_blog">Blog</a>
+</div>
+</div>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="bolton_tag">Bolton no OrthoCal</div>
+    <h2 class="section-title" data-i18n="bolton_ben_h2">Cálculo de Bolton sem planilha</h2>
+    <p class="section-sub" data-i18n="bolton_ben_sub">Tudo integrado ao fluxo de trabalho do consultório.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">📐</div>
+      <h3 data-i18n="bolton_benefit1_title">Índice anterior e total</h3>
+      <p data-i18n="bolton_benefit1_desc">Calcule as duas proporções automaticamente a partir das medidas dentárias.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🦷</div>
+      <h3 data-i18n="bolton_benefit2_title">Integração com STL</h3>
+      <p data-i18n="bolton_benefit2_desc">Use medições feitas diretamente sobre o modelo 3D escaneado, sem redigitar valores.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">👥</div>
+      <h3 data-i18n="bolton_benefit3_title">Vinculado ao paciente</h3>
+      <p data-i18n="bolton_benefit3_desc">Salve o resultado da análise no prontuário do paciente para acompanhar a evolução do caso.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-i18n="bolton_benefit4_title">Funciona offline</h3>
+      <p data-i18n="bolton_benefit4_desc">Calcule Bolton mesmo sem conexão com a internet, direto no consultório.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+    <h2 class="section-title" data-i18n="faq_title">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="bolton_faq1_q">O que a análise de Bolton mede?</div>
+    <div class="faq-a" data-i18n="bolton_faq1_a">Mede a proporção entre o tamanho mesiodistal dos dentes superiores e inferiores, indicando se há excesso ou falta de material dentário em uma das arcadas.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="bolton_faq2_q">Qual a diferença entre índice anterior e índice total de Bolton?</div>
+    <div class="faq-a" data-i18n="bolton_faq2_a">O índice anterior considera apenas os seis dentes anteriores de cada arcada. O índice total considera os 12 dentes de canino a canino, incluindo pré-molares e primeiros molares.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="bolton_faq3_q">Quando a discrepância de Bolton é clinicamente relevante?</div>
+    <div class="faq-a" data-i18n="bolton_faq3_a">Discrepâncias acima de aproximadamente 2 mm costumam ser consideradas clinicamente significativas e podem exigir desgaste interproximal, expansão ou outra estratégia de compensação.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="bolton_faq4_q">O OrthoCal calcula Bolton automaticamente?</div>
+    <div class="faq-a" data-i18n="bolton_faq4_a">Sim. Basta inserir as medidas mesiodistais dos dentes e o app calcula o índice anterior e o total, comparando com as médias de referência de Bolton.</div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+<script src="../partials.js"></script>
+<script src="../index.js"></script>
+
+</body>
+</html>

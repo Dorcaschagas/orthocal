@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Como Medir Modelos STL na Ortodontia | OrthoCal Blog</title>
+  <meta name="description" content="Aprenda a medir a largura mesiodistal dos dentes em modelos STL digitais para aplicar análises de Bolton e Moyers com precisão." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/blog/como-medir-modelos-stl/" />
+  <link rel="icon" type="image/png" href="../../orthocal-icon.png" />
+  <link rel="apple-touch-icon" href="../../orthocal-icon.png" />
+  <meta name="theme-color" content="#6c3ff5" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/blog/como-medir-modelos-stl/" />
+  <meta property="og:title" content="Como Medir Modelos STL na Ortodontia | OrthoCal Blog" />
+  <meta property="og:description" content="Aprenda a medir a largura mesiodistal dos dentes em modelos STL digitais para aplicar análises de Bolton e Moyers com precisão." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Como Medir Modelos STL na Ortodontia | OrthoCal Blog" />
+  <meta name="twitter:description" content="Aprenda a medir a largura mesiodistal dos dentes em modelos STL digitais para aplicar análises de Bolton e Moyers com precisão." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "OrthoCal", "item": "https://sitedc.online/orthocal/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sitedc.online/orthocal/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Como Medir Modelos STL na Ortodontia", "item": "https://sitedc.online/orthocal/blog/como-medir-modelos-stl/" }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Como Medir Modelos STL na Ortodontia",
+  "description": "Aprenda a medir a largura mesiodistal dos dentes em modelos STL digitais para aplicar análises de Bolton e Moyers com precisão.",
+  "image": "https://sitedc.online/orthocal/orthocal-icon.png",
+  "author": { "@type": "Organization", "name": "OrthoCal" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OrthoCal",
+    "logo": { "@type": "ImageObject", "url": "https://sitedc.online/orthocal/orthocal-icon.png" }
+  },
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sitedc.online/orthocal/blog/como-medir-modelos-stl/" }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é a largura mesiodistal de um dente?",
+      "acceptedAnswer": { "@type": "Answer", "text": "É a maior distância entre os pontos de contato mesial e distal da coroa dentária, medida usada como base para as análises de Bolton e Moyers." }
+    },
+    {
+      "@type": "Question",
+      "name": "É preciso um paquímetro físico para medir modelos STL?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. A medição é feita digitalmente na tela, tocando ou clicando nos pontos de contato do dente diretamente sobre o modelo 3D." }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual o erro mais comum ao medir modelos STL?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Medir com o modelo em ângulo incorreto, sem alinhar a visão perpendicularmente ao dente, o que distorce a medida real." }
+    },
+    {
+      "@type": "Question",
+      "name": "As medidas do modelo STL podem ser usadas direto na análise de Bolton?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim, no OrthoCal as medidas coletadas no visualizador STL alimentam diretamente as calculadoras de Bolton e Moyers, sem necessidade de digitar os valores novamente." }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+
+<main id="main-content">
+
+<section id="article" style="max-width:760px;margin:0 auto;padding:64px 5vw;">
+
+<header style="margin-bottom:32px;">
+  <div class="section-tag" data-i18n="blogmedirstl_tag">Odontologia Digital</div>
+  <h1 data-i18n="blogmedirstl_h1" style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px;">Como Medir Modelos STL na Ortodontia</h1>
+  <p data-i18n="blog_byline" style="color:var(--gray);font-size:.95rem;">OrthoCal · Ortodontia Digital</p>
+</header>
+
+<p data-i18n="blogmedirstl_p_1">Depois de obter um <a href="/orthocal/stl/">modelo STL</a> por meio de um <a href="/orthocal/blog/scanner-intraoral/">scanner intraoral</a>, o próximo passo do fluxo clínico é medir os dentes representados nesse modelo digital. Essas medidas alimentam diretamente análises consagradas da ortodontia, como Bolton e Moyers.</p>
+
+<h2 data-i18n="blogmedirstl_h2_1">O que medir em um modelo STL</h2>
+<p data-i18n="blogmedirstl_p_2">A medida mais utilizada na ortodontia é a largura mesiodistal de cada dente — a maior distância entre os pontos de contato mesial e distal da coroa dentária. Essa medida é a base para:</p>
+<ul>
+  <li data-i18n="blogmedirstl_li_1">A <a href="/orthocal/blog/o-que-e-analise-de-bolton/">análise de Bolton</a>, comparando a soma das larguras entre os arcos superior e inferior.</li>
+  <li data-i18n="blogmedirstl_li_2">A <a href="/orthocal/blog/como-funciona-analise-de-moyers/">análise de Moyers</a>, usando a soma dos incisivos inferiores para predizer o tamanho de dentes ainda não erupcionados.</li>
+  <li data-i18n="blogmedirstl_li_3">O cálculo de discrepância de espaço, comparando espaço disponível com espaço necessário no arco.</li>
+</ul>
+
+<h2 data-i18n="blogmedirstl_h2_2">Como medir corretamente no modelo digital</h2>
+<p data-i18n="blogmedirstl_p_3">Ao contrário da medição em modelo de gesso com paquímetro físico, a medição digital é feita diretamente na tela, geralmente tocando ou clicando nos dois pontos de contato do dente (mesial e distal) enquanto o modelo pode ser rotacionado e ampliado (zoom) para melhor precisão visual.</p>
+<p data-i18n="blogmedirstl_p_4">Alguns cuidados importantes:</p>
+<ul>
+  <li data-i18n="blogmedirstl_li_4">Rotacionar o modelo para visualizar o dente de frente, evitando erro de paralaxe.</li>
+  <li data-i18n="blogmedirstl_li_5">Usar o zoom para posicionar os pontos de medição com mais precisão nos pontos de contato reais.</li>
+  <li data-i18n="blogmedirstl_li_6">Conferir visualmente se a medida está sendo tomada na maior largura da coroa, e não em um ponto intermediário.</li>
+  <li data-i18n="blogmedirstl_li_7">Medir os dentes na mesma sequência (ex: da direita para a esquerda) para evitar omissões.</li>
+</ul>
+
+<h2 data-i18n="blogmedirstl_h2_3">Ferramentas de medição no OrthoCal</h2>
+<p data-i18n="blogmedirstl_p_5">O <a href="/orthocal/stl-viewer/">Visualizador STL do OrthoCal</a> foi desenvolvido para permitir exatamente esse processo: abrir o modelo escaneado, rotacionar, dar zoom e marcar os pontos de medição diretamente sobre a superfície 3D. As medidas coletadas podem então ser usadas automaticamente nas calculadoras de <a href="/orthocal/bolton/">Bolton</a> e <a href="/orthocal/moyers/">Moyers</a> do app, sem necessidade de transcrever valores manualmente entre ferramentas diferentes.</p>
+
+<h2 data-i18n="blogmedirstl_h2_4">Erros comuns ao medir modelos STL</h2>
+<ul>
+  <li data-i18n="blogmedirstl_li_8">Medir com o modelo em ângulo, sem alinhar a visão perpendicularmente ao dente.</li>
+  <li data-i18n="blogmedirstl_li_9">Confundir pontos de contato com bordas incisais ou cúspides.</li>
+  <li data-i18n="blogmedirstl_li_10">Pular dentes por distração durante a sequência de medição.</li>
+  <li data-i18n="blogmedirstl_li_11">Não conferir a soma final antes de aplicar a análise de Bolton ou Moyers.</li>
+</ul>
+<p data-i18n="blogmedirstl_p_6">Ter um fluxo integrado — do escaneamento à análise, dentro do mesmo aplicativo — reduz consideravelmente esses erros, por eliminar etapas manuais de transcrição de dados entre diferentes softwares.</p>
+
+<h2 data-i18n="blogmedirstl_h2_5">Diferença entre medir em gesso e medir em STL</h2>
+<p data-i18n="blogmedirstl_p_7">Na medição tradicional com paquímetro em modelo de gesso, o profissional depende do tato e da visão direta sobre um objeto físico, o que pode ser afetado por iluminação do ambiente e ângulo de visão. Na medição digital sobre um <a href="/orthocal/blog/como-abrir-arquivos-stl-odontologicos/">modelo STL</a>, o software permite ampliar a região de interesse indefinidamente e rotacionar o modelo em qualquer eixo, facilitando encontrar o ponto exato de maior largura da coroa — algo mais difícil de garantir com um instrumento físico.</p>
+
+<h2 data-i18n="blogmedirstl_h2_6">Sequência recomendada de medição</h2>
+<ol>
+  <li data-i18n="blogmedirstl_li_12">Abrir o modelo STL completo (superior e inferior) no visualizador.</li>
+  <li data-i18n="blogmedirstl_li_13">Posicionar a visão perpendicular ao primeiro dente a ser medido (geralmente iniciando pelo primeiro molar de um lado).</li>
+  <li data-i18n="blogmedirstl_li_14">Marcar o ponto de contato mesial e, em seguida, o ponto de contato distal.</li>
+  <li data-i18n="blogmedirstl_li_15">Conferir visualmente a linha de medição gerada antes de confirmar o valor.</li>
+  <li data-i18n="blogmedirstl_li_16">Repetir o processo para todos os dentes necessários, seguindo sempre a mesma direção pelo arco.</li>
+  <li data-i18n="blogmedirstl_li_17">Revisar a lista completa de medidas antes de enviá-la para a análise de Bolton ou Moyers.</li>
+</ol>
+
+<h2 data-i18n="blogmedirstl_h2_7">Por que a consistência da técnica importa</h2>
+<p data-i18n="blogmedirstl_p_8">Pequenas variações na forma de medir — por exemplo, considerar às vezes a borda incisal e às vezes o ponto de contato real — podem gerar diferenças de décimos de milímetro por dente, que se acumulam na soma total usada nas análises de Bolton e Moyers. Manter uma técnica de medição padronizada, dente após dente e paciente após paciente, é o que garante que os resultados sejam comparáveis ao longo do tempo e entre diferentes profissionais da mesma clínica.</p>
+
+<h2 data-i18n="blogmedirstl_h2_8">Quando revisar as medidas</h2>
+<p data-i18n="blogmedirstl_p_9">Sempre que o resultado de uma análise de Bolton ou Moyers apresentar um valor muito fora do esperado clinicamente, vale a pena revisar as medidas individuais antes de tomar decisões de tratamento baseadas nesse número. Um único dente medido incorretamente pode distorcer significativamente a razão final calculada.</p>
+
+
+<!-- ══ FAQ ══ -->
+<div style="margin-top:56px;">
+  <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+  <h2 class="section-title" data-i18n="faq_title" style="font-size:1.8rem;">Perguntas frequentes</h2>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="blogmedirstl_faq1_q">O que é a largura mesiodistal de um dente?</div>
+    <div class="faq-a" data-i18n="blogmedirstl_faq1_a">É a maior distância entre os pontos de contato mesial e distal da coroa dentária, medida usada como base para as análises de Bolton e Moyers.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogmedirstl_faq2_q">É preciso um paquímetro físico para medir modelos STL?</div>
+    <div class="faq-a" data-i18n="blogmedirstl_faq2_a">Não. A medição é feita digitalmente na tela, tocando ou clicando nos pontos de contato do dente diretamente sobre o modelo 3D.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogmedirstl_faq3_q">Qual o erro mais comum ao medir modelos STL?</div>
+    <div class="faq-a" data-i18n="blogmedirstl_faq3_a">Medir com o modelo em ângulo incorreto, sem alinhar a visão perpendicularmente ao dente, o que distorce a medida real.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogmedirstl_faq4_q">As medidas do modelo STL podem ser usadas direto na análise de Bolton?</div>
+    <div class="faq-a" data-i18n="blogmedirstl_faq4_a">Sim, no OrthoCal as medidas coletadas no visualizador STL alimentam diretamente as calculadoras de Bolton e Moyers, sem necessidade de digitar os valores novamente.</div>
+  </div>
+</div>
+
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+
+<script src="../../partials.js"></script>
+<script src="../../index.js"></script>
+
+</body>
+</html>

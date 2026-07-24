@@ -1,0 +1,19 @@
+{
+  "name": "OrthoCal – Calculadora Ortodôntica",
+  "short_name": "OrthoCal",
+  "description": "App de análise ortodôntica: Bolton, Wolford, Moyers, visualizador STL e DICOM, gestão de pacientes.",
+  "start_url": "/orthocal/",
+  "scope": "/orthocal/",
+  "display": "standalone",
+  "background_color": "#1a0b3e",
+  "theme_color": "#6c3ff5",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "orthocal-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

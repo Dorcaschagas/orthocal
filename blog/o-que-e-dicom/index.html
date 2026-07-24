@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>O que é DICOM? Guia para Ortodontistas | OrthoCal Blog</title>
+  <meta name="description" content="Entenda o que é o padrão DICOM, como funciona em exames de imagem odontológica e por que é essencial para tomografias CBCT." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/blog/o-que-e-dicom/" />
+  <link rel="icon" type="image/png" href="../../orthocal-icon.png" />
+  <link rel="apple-touch-icon" href="../../orthocal-icon.png" />
+  <meta name="theme-color" content="#6c3ff5" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/blog/o-que-e-dicom/" />
+  <meta property="og:title" content="O que é DICOM? Guia para Ortodontistas | OrthoCal Blog" />
+  <meta property="og:description" content="Entenda o que é o padrão DICOM, como funciona em exames de imagem odontológica e por que é essencial para tomografias CBCT." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="O que é DICOM? Guia para Ortodontistas | OrthoCal Blog" />
+  <meta name="twitter:description" content="Entenda o que é o padrão DICOM, como funciona em exames de imagem odontológica e por que é essencial para tomografias CBCT." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "OrthoCal", "item": "https://sitedc.online/orthocal/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sitedc.online/orthocal/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "O que é DICOM? Guia para Ortodontistas", "item": "https://sitedc.online/orthocal/blog/o-que-e-dicom/" }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "O que é DICOM? Guia para Ortodontistas",
+  "description": "Entenda o que é o padrão DICOM, como funciona em exames de imagem odontológica e por que é essencial para tomografias CBCT.",
+  "image": "https://sitedc.online/orthocal/orthocal-icon.png",
+  "author": { "@type": "Organization", "name": "OrthoCal" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OrthoCal",
+    "logo": { "@type": "ImageObject", "url": "https://sitedc.online/orthocal/orthocal-icon.png" }
+  },
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sitedc.online/orthocal/blog/o-que-e-dicom/" }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qual a extensão de um arquivo DICOM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Normalmente .dcm, embora alguns exames sejam exportados sem extensão explícita dentro de uma pasta padronizada DICOMDIR." }
+    },
+    {
+      "@type": "Question",
+      "name": "DICOM é exclusivo de tomografia?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. É usado também em raio-X digital, ressonância magnética e outros exames de imagem médica, mas na ortodontia está mais associado ao CBCT." }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso abrir um arquivo DICOM em qualquer leitor de imagem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. É necessário um software específico compatível com o padrão DICOM para interpretar a estrutura do arquivo corretamente." }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é MPR em um visualizador DICOM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "MPR (multiplanar reconstruction) é a capacidade de visualizar o mesmo exame em diferentes planos — axial, sagital e coronal — a partir do mesmo conjunto de dados." }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+
+<main id="main-content">
+
+<section id="article" style="max-width:760px;margin:0 auto;padding:64px 5vw;">
+
+<header style="margin-bottom:32px;">
+  <div class="section-tag" data-i18n="blogdicom_tag">Imagem Odontológica</div>
+  <h1 data-i18n="blogdicom_h1" style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px;">O que é DICOM?</h1>
+  <p data-i18n="blog_byline" style="color:var(--gray);font-size:.95rem;">OrthoCal · Ortodontia Digital</p>
+</header>
+
+<p data-i18n="blogdicom_p_1">DICOM (Digital Imaging and Communications in Medicine) é o padrão internacional utilizado para armazenar, transmitir e visualizar exames de imagem médica e odontológica. Arquivos nesse formato têm extensão .dcm e são o padrão de saída de equipamentos como tomógrafos de <a href="/orthocal/blog/o-que-e-cbct/">CBCT</a>, aparelhos de raio-X digital e ressonância magnética.</p>
+
+<h2 data-i18n="blogdicom_h2_1">Por que o DICOM existe</h2>
+<p data-i18n="blogdicom_p_2">Antes da padronização DICOM, cada fabricante de equipamento de imagem tinha seu próprio formato de arquivo, dificultando a troca de exames entre diferentes softwares e clínicas. O DICOM resolve esse problema definindo um padrão único, permitindo que qualquer software compatível abra exames gerados por diferentes fabricantes de tomógrafos.</p>
+
+<h2 data-i18n="blogdicom_h2_2">O que um arquivo DICOM contém</h2>
+<p data-i18n="blogdicom_p_3">Além dos dados de imagem propriamente ditos, um arquivo DICOM carrega metadados estruturados, como:</p>
+<ul>
+  <li data-i18n="blogdicom_li_1">Dados do paciente (quando incluídos pelo equipamento).</li>
+  <li data-i18n="blogdicom_li_2">Parâmetros técnicos da aquisição (espessura de corte, resolução, etc).</li>
+  <li data-i18n="blogdicom_li_3">Informações de calibração necessárias para reconstrução tridimensional.</li>
+</ul>
+<p data-i18n="blogdicom_p_4">É justamente essa estrutura padronizada que permite reconstruções como o MPR (multiplanar reconstruction) — a visualização do mesmo exame em cortes axial, sagital e coronal simultaneamente — e a <a href="/orthocal/reconstrucao-3d/">reconstrução 3D</a> volumétrica.</p>
+
+<h3 data-i18n="blogdicom_h3_1">Principais tags de metadados em um arquivo DICOM</h3>
+<ul>
+  <li data-i18n="blogdicom_li_4">Identificação do equipamento e fabricante que gerou o exame.</li>
+  <li data-i18n="blogdicom_li_5">Data e hora da aquisição.</li>
+  <li data-i18n="blogdicom_li_6">Espessura de corte e espaçamento entre fatias (slice thickness/spacing).</li>
+  <li data-i18n="blogdicom_li_7">Orientação espacial do paciente durante a captura.</li>
+  <li data-i18n="blogdicom_li_8">Protocolo utilizado (região anatômica, campo de visão, dose aplicada).</li>
+</ul>
+
+<h2 data-i18n="blogdicom_h2_3">DICOM na ortodontia</h2>
+<p data-i18n="blogdicom_p_5">Na ortodontia, o uso mais comum do DICOM é associado a exames de <a href="/orthocal/cbct/">CBCT</a> (tomografia computadorizada de feixe cônico), utilizados para avaliar estruturas ósseas, posição de dentes inclusos, vias aéreas e planejamento cirúrgico, incluindo casos que envolvem a <a href="/orthocal/blog/como-funciona-analise-de-wolford/">análise de Wolford</a> para discrepância esquelética.</p>
+
+<h2 data-i18n="blogdicom_h2_4">Como visualizar arquivos DICOM</h2>
+<p data-i18n="blogdicom_p_6">Diferente de uma imagem comum (JPEG ou PNG), um DICOM não abre em qualquer visualizador de imagens — é necessário um software específico que interprete a estrutura do arquivo e permita navegar pelos cortes do exame. O <a href="/orthocal/dicom/">Visualizador DICOM do OrthoCal</a> permite abrir exames .dcm diretamente no app, com suporte a MPR, possibilitando a análise da tomografia sem depender de estações de trabalho especializadas.</p>
+
+<h2 data-i18n="blogdicom_h2_5">Privacidade dos dados DICOM</h2>
+<p data-i18n="blogdicom_p_7">Como arquivos DICOM podem conter dados identificáveis do paciente nos metadados, é importante que o software utilizado para visualização trate essas informações com cuidado, especialmente ao compartilhar exames entre profissionais.</p>
+
+<h2 data-i18n="blogdicom_h2_6">Estrutura de um estudo DICOM</h2>
+<p data-i18n="blogdicom_p_8">Um exame completo em DICOM normalmente é organizado em uma hierarquia: paciente, estudo, série e imagem. Uma única aquisição de <a href="/orthocal/blog/o-que-e-cbct/">CBCT</a>, por exemplo, pode gerar centenas ou milhares de imagens individuais (cortes), agrupadas em uma ou mais séries dentro do mesmo estudo. É essa organização hierárquica, padronizada pelo próprio protocolo DICOM, que permite que qualquer software compatível reconstrua os cortes na ordem correta e nas orientações espaciais adequadas.</p>
+
+<h2 data-i18n="blogdicom_h2_7">Janelamento e contraste</h2>
+<p data-i18n="blogdicom_p_9">Diferente de uma foto comum, os valores de cada pixel em um DICOM de tomografia representam unidades de densidade (relacionadas à escala de Hounsfield em TC médica). Um bom visualizador permite ajustar o "janelamento" — a faixa de valores mapeada para tons de cinza na tela — destacando tecido ósseo, tecido mole ou estruturas dentárias conforme a necessidade diagnóstica, sem alterar os dados originais do exame.</p>
+
+<h3 data-i18n="blogdicom_h3_2">Recursos comuns em visualizadores DICOM</h3>
+<ul>
+  <li data-i18n="blogdicom_li_9">Navegação por cortes axiais, sagitais e coronais (MPR).</li>
+  <li data-i18n="blogdicom_li_10">Ferramentas de medição linear e angular sobre a imagem.</li>
+  <li data-i18n="blogdicom_li_11">Ajuste de janelamento para realçar osso, tecido mole ou dente.</li>
+  <li data-i18n="blogdicom_li_12">Reconstrução volumétrica 3D a partir do conjunto de cortes.</li>
+</ul>
+
+<h2 data-i18n="blogdicom_h2_8">DICOM e o fluxo de trabalho com STL</h2>
+<p data-i18n="blogdicom_p_10">Em um planejamento completo, o DICOM do exame de imagem costuma ser usado junto ao <a href="/orthocal/blog/como-abrir-arquivos-stl-odontologicos/">modelo STL</a> obtido por <a href="/orthocal/blog/scanner-intraoral/">scanner intraoral</a>. Enquanto o DICOM fornece informação óssea e interna, o STL fornece a superfície dentária com alta fidelidade — a combinação dos dois é o que sustenta um <a href="/orthocal/blog/planejamento-ortodontico-digital/">planejamento ortodôntico digital</a> completo, especialmente em casos que envolvem avaliação cirúrgica.</p>
+
+<h2 data-i18n="blogdicom_h2_9">Compatibilidade entre equipamentos e softwares</h2>
+<p data-i18n="blogdicom_p_11">Um dos maiores méritos do padrão DICOM é garantir que um exame gerado em um tomógrafo de determinado fabricante possa ser aberto em um software de visualização de outro fabricante, desde que ambos sigam o protocolo corretamente. Isso dá liberdade ao ortodontista de escolher o software de visualização mais adequado à sua rotina clínica, independentemente de onde o exame de imagem foi realizado — um serviço de radiologia terceirizado, uma clínica parceira, ou o próprio consultório.</p>
+
+<h2 data-i18n="blogdicom_h2_10">Transferência e armazenamento de exames DICOM</h2>
+<p data-i18n="blogdicom_p_12">Por gerarem muitos arquivos individuais (um por corte), os exames DICOM costumam ser entregues compactados em uma pasta ou em mídia digital, seguindo a estrutura padrão DICOMDIR. Ao importar esses arquivos em um visualizador, é importante manter a pasta completa, sem separar ou renomear arquivos manualmente, já que o software depende dos metadados internos — e não apenas do nome do arquivo — para reconstruir o exame corretamente.</p>
+
+
+<!-- ══ FAQ ══ -->
+<div style="margin-top:56px;">
+  <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+  <h2 class="section-title" data-i18n="faq_title" style="font-size:1.8rem;">Perguntas frequentes</h2>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="blogdicom_faq1_q">Qual a extensão de um arquivo DICOM?</div>
+    <div class="faq-a" data-i18n="blogdicom_faq1_a">Normalmente .dcm, embora alguns exames sejam exportados sem extensão explícita dentro de uma pasta padronizada DICOMDIR.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogdicom_faq2_q">DICOM é exclusivo de tomografia?</div>
+    <div class="faq-a" data-i18n="blogdicom_faq2_a">Não. É usado também em raio-X digital, ressonância magnética e outros exames de imagem médica, mas na ortodontia está mais associado ao CBCT.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogdicom_faq3_q">Posso abrir um arquivo DICOM em qualquer leitor de imagem?</div>
+    <div class="faq-a" data-i18n="blogdicom_faq3_a">Não. É necessário um software específico compatível com o padrão DICOM para interpretar a estrutura do arquivo corretamente.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="blogdicom_faq4_q">O que é MPR em um visualizador DICOM?</div>
+    <div class="faq-a" data-i18n="blogdicom_faq4_a">MPR (multiplanar reconstruction) é a capacidade de visualizar o mesmo exame em diferentes planos — axial, sagital e coronal — a partir do mesmo conjunto de dados.</div>
+  </div>
+</div>
+
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+
+<script src="../../partials.js"></script>
+<script src="../../index.js"></script>
+
+</body>
+</html>

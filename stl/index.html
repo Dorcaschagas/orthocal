@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Arquivos STL Odontológicos: O Que São e Para Que Servem | OrthoCal</title>
+  <meta name="description" content="Entenda o que é um arquivo STL odontológico, de onde ele vem e por que é importante na ortodontia digital. Veja como abrir modelos STL no OrthoCal." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/stl/" />
+  <link rel="icon" type="image/png" href="../orthocal-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/stl/" />
+  <meta property="og:title" content="Arquivos STL odontológicos explicados | OrthoCal" />
+  <meta property="og:description" content="Entenda o que é um arquivo STL odontológico, de onde ele vem e por que é importante na ortodontia digital. Veja como abrir modelos STL no OrthoCal." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arquivos STL odontológicos explicados | OrthoCal" />
+  <meta name="twitter:description" content="Entenda o que é um arquivo STL odontológico, de onde ele vem e por que é importante na ortodontia digital. Veja como abrir modelos STL no OrthoCal." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+  .article-content { max-width: 780px; margin: 0 auto; padding: 72px 5vw; }
+  .article-content h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color:var(--text); margin: 40px 0 16px; }
+  .article-content h3 { font-size: 1.15rem; font-weight: 700; color:var(--text); margin: 28px 0 12px; }
+  .article-content p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: 1.02rem; }
+  .article-content ul, .article-content ol { color: var(--gray); line-height: 1.8; margin: 0 0 20px 24px; }
+  .article-content li { margin-bottom: 8px; }
+  .article-content a { color: var(--primary); font-weight: 600; }
+  .internal-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .internal-links a { background: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: 20px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .internal-links a:hover { background: var(--primary); color: #fff; }
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "OrthoCal",
+      "item": "https://sitedc.online/orthocal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Arquivos STL Odontológicos",
+      "item": "https://sitedc.online/orthocal/stl/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Arquivos STL Odontológicos",
+  "description": "O que são arquivos STL na odontologia, de onde vêm e como visualizá-los com o OrthoCal.",
+  "url": "https://sitedc.online/orthocal/stl/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "OrthoCal",
+    "url": "https://sitedc.online/orthocal/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "OrthoCal",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "iOS, Android, macOS"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que significa STL em odontologia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "STL é um formato de arquivo 3D baseado em malha de triângulos, usado para representar digitalmente a superfície de arcadas dentárias escaneadas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como um arquivo STL é gerado na clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode vir de um scanner intraoral, capturando a boca do paciente diretamente, ou de um scanner de bancada digitalizando um modelo de gesso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para medir dentes em um arquivo STL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Como o STL contém a geometria real do modelo, é possível medir largura mesiodistal, distâncias e ângulos diretamente sobre ele."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O OrthoCal abre arquivos STL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O OrthoCal tem um visualizador STL nativo com rotação, zoom e medição, que pode alimentar diretamente as análises de dentição do app."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+<main id="main-content">
+
+<!-- ══ INTRO / HERO ══ -->
+<section id="intro-hero" style="background:var(--light);padding:100px 5vw 60px;text-align:center;">
+  <div style="max-width:820px;margin:0 auto;">
+    <img src="../orthocal-icon.png" alt="OrthoCal" style="width:72px;height:72px;border-radius:18px;margin-bottom:20px;box-shadow:0 8px 24px rgba(108,63,245,.25);">
+    <h1 data-i18n="stl_h1" style="font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;color:var(--text);margin-bottom:20px;line-height:1.2;">Arquivos STL odontológicos: o que são e por que importam</h1>
+    <p data-i18n="stl_intro_p" style="font-size:1.1rem;color:var(--gray);margin-bottom:32px;line-height:1.7;">STL é o formato de arquivo mais comum para representar modelos 3D de arcadas dentárias gerados por scanners intraorais. Entenda como ele funciona e por que é a base da ortodontia digital.</p>
+    <a class="btn-primary" data-i18n="cta_download_btn" href="#cta-final">📲 Baixar o OrthoCal</a>
+  </div>
+</section>
+
+<div class="article-content">
+
+<h2 data-i18n="stl_h2_1">O que é um arquivo STL</h2>
+<p data-i18n="stl_p_1">STL (stereolithography) é um formato de arquivo que descreve a superfície de um objeto 3D como uma malha de triângulos. Na odontologia, esse formato é usado para representar o modelo digital das arcadas dentárias, capturado por um scanner intraoral ou por escaneamento de um modelo de gesso.</p>
+<p data-i18n="stl_p_2">Diferente de uma foto ou um vídeo, o arquivo STL contém informação geométrica real: é possível medir distâncias, ângulos e volumes diretamente sobre o modelo, algo essencial para análises ortodônticas como Bolton e Moyers.</p>
+
+<h2 data-i18n="stl_h2_2">De onde vem o arquivo STL na ortodontia</h2>
+<p data-i18n="stl_p_3">Os arquivos STL usados em ortodontia normalmente têm duas origens:</p>
+<ul>
+  <li data-i18n="stl_li_1"><strong>Scanner intraoral:</strong> equipamento que captura a arcada dentária diretamente na boca do paciente, sem moldagem física, gerando o arquivo STL em minutos.</li>
+  <li data-i18n="stl_li_2"><strong>Escaneamento de modelo de gesso:</strong> um modelo físico tradicional, obtido por moldagem, é digitalizado por um scanner de bancada e convertido em STL.</li>
+</ul>
+
+<h3 data-i18n="stl_h3_1">Vantagens sobre o modelo de gesso tradicional</h3>
+<p data-i18n="stl_p_4">O modelo digital em STL elimina a necessidade de armazenamento físico de dezenas de modelos de gesso, permite compartilhamento instantâneo entre profissionais (por exemplo, com um laboratório de prótese) e possibilita medições diretamente no arquivo, sem uso de paquímetro manual sobre gesso.</p>
+
+<h2 data-i18n="stl_h2_3">O que dá para fazer com um STL odontológico</h2>
+<p data-i18n="stl_p_5">Um modelo STL bem capturado permite:</p>
+<ul>
+  <li data-i18n="stl_li_3">Medir a largura mesiodistal de cada dente para análises de Bolton e Wolford;</li>
+  <li data-i18n="stl_li_4">Avaliar apinhamento, espaçamento e relação oclusal;</li>
+  <li data-i18n="stl_li_5">Acompanhar a evolução do tratamento comparando modelos de diferentes datas;</li>
+  <li data-i18n="stl_li_6">Enviar para laboratórios de alinhadores ou aparelhos, sem depender de envio físico.</li>
+</ul>
+
+<h2 data-i18n="stl_h2_4">Como o OrthoCal trabalha com arquivos STL</h2>
+<p data-i18n="stl_p_6">O OrthoCal inclui um visualizador STL que abre esses modelos diretamente no celular ou no Mac, com rotação, zoom e ferramentas de medição, permitindo usar o modelo digital do paciente para alimentar diretamente as análises de dentição mista e permanente, sem precisar de outro software.</p>
+
+
+<h2 data-i18n="stl_h2_5">Onde o OrthoCal entra</h2>
+<p data-i18n="stl_p_7">O visualizador STL do OrthoCal abre modelos gerados por scanners intraorais diretamente no app, com rotação, zoom e medição — e essas medições podem alimentar diretamente os cálculos de Bolton e Moyers, sem exportar dados para outro programa.</p>
+
+<h3 data-i18n="continue_exploring">Continue explorando</h3>
+<div class="internal-links">
+  <a href="/orthocal/stl-viewer/" data-i18n="link_stl_viewer">Visualizador STL</a>
+  <a href="/orthocal/bolton/" data-i18n="link_bolton">Análise de Bolton</a>
+  <a href="/orthocal/dicom/" data-i18n="link_dicom">Visualizador DICOM</a>
+  <a href="../" data-i18n="link_home">Página inicial</a>
+  <a href="/orthocal/blog/" data-i18n="nav_blog">Blog</a>
+</div>
+</div>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="stl_tag">STL no OrthoCal</div>
+    <h2 class="section-title" data-i18n="stl_ben_h2">Do scanner ao cálculo, em um só app</h2>
+    <p class="section-sub" data-i18n="stl_ben_sub">Sem exportar arquivos entre programas diferentes.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🖼️</div>
+      <h3 data-i18n="stl_benefit1_title">Abre modelos STL</h3>
+      <p data-i18n="stl_benefit1_desc">Visualize o modelo 3D do scanner intraoral direto no app, sem conversões.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📐</div>
+      <h3 data-i18n="stl_benefit2_title">Medição integrada</h3>
+      <p data-i18n="stl_benefit2_desc">Meça dentes no modelo e use os valores direto nas análises de Bolton e Moyers.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">👥</div>
+      <h3 data-i18n="stl_benefit3_title">Vinculado ao paciente</h3>
+      <p data-i18n="stl_benefit3_desc">Cada modelo STL fica associado ao prontuário do paciente correspondente.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-i18n="stl_benefit4_title">Offline</h3>
+      <p data-i18n="stl_benefit4_desc">Abra e meça modelos STL mesmo sem internet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+    <h2 class="section-title" data-i18n="faq_title">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="stl_faq1_q">O que significa STL em odontologia?</div>
+    <div class="faq-a" data-i18n="stl_faq1_a">STL é um formato de arquivo 3D baseado em malha de triângulos, usado para representar digitalmente a superfície de arcadas dentárias escaneadas.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stl_faq2_q">Como um arquivo STL é gerado na clínica?</div>
+    <div class="faq-a" data-i18n="stl_faq2_a">Pode vir de um scanner intraoral, capturando a boca do paciente diretamente, ou de um scanner de bancada digitalizando um modelo de gesso.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stl_faq3_q">Dá para medir dentes em um arquivo STL?</div>
+    <div class="faq-a" data-i18n="stl_faq3_a">Sim. Como o STL contém a geometria real do modelo, é possível medir largura mesiodistal, distâncias e ângulos diretamente sobre ele.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stl_faq4_q">O OrthoCal abre arquivos STL?</div>
+    <div class="faq-a" data-i18n="stl_faq4_a">Sim. O OrthoCal tem um visualizador STL nativo com rotação, zoom e medição, que pode alimentar diretamente as análises de dentição do app.</div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+<script src="../partials.js"></script>
+<script src="../index.js"></script>
+
+</body>
+</html>

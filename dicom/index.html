@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Visualizador DICOM para Ortodontia com MPR | OrthoCal</title>
+  <meta name="description" content="Visualize arquivos DICOM (.dcm) de tomografias e radiografias com suporte a MPR, direto no celular, com o visualizador DICOM do OrthoCal." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/dicom/" />
+  <link rel="icon" type="image/png" href="../orthocal-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/dicom/" />
+  <meta property="og:title" content="Visualizador DICOM com MPR | OrthoCal" />
+  <meta property="og:description" content="Visualize arquivos DICOM (.dcm) de tomografias e radiografias com suporte a MPR, direto no celular, com o visualizador DICOM do OrthoCal." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Visualizador DICOM com MPR | OrthoCal" />
+  <meta name="twitter:description" content="Visualize arquivos DICOM (.dcm) de tomografias e radiografias com suporte a MPR, direto no celular, com o visualizador DICOM do OrthoCal." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+  .article-content { max-width: 780px; margin: 0 auto; padding: 72px 5vw; }
+  .article-content h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color:var(--text); margin: 40px 0 16px; }
+  .article-content h3 { font-size: 1.15rem; font-weight: 700; color:var(--text); margin: 28px 0 12px; }
+  .article-content p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: 1.02rem; }
+  .article-content ul, .article-content ol { color: var(--gray); line-height: 1.8; margin: 0 0 20px 24px; }
+  .article-content li { margin-bottom: 8px; }
+  .article-content a { color: var(--primary); font-weight: 600; }
+  .internal-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .internal-links a { background: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: 20px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .internal-links a:hover { background: var(--primary); color: #fff; }
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "OrthoCal",
+      "item": "https://sitedc.online/orthocal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Visualizador DICOM",
+      "item": "https://sitedc.online/orthocal/dicom/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Visualizador DICOM",
+  "description": "O que é DICOM, como o formato é usado em ortodontia, e como o OrthoCal visualiza esses arquivos com MPR.",
+  "url": "https://sitedc.online/orthocal/dicom/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "OrthoCal",
+    "url": "https://sitedc.online/orthocal/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "OrthoCal",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "iOS, Android, macOS"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é um arquivo DICOM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É o formato padrão para imagens médicas, como tomografias e radiografias digitais, que carrega tanto a imagem quanto metadados do exame."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que significa MPR em um visualizador DICOM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MPR (Multiplanar Reconstruction) é a técnica que reconstrói as vistas axial, sagital e coronal a partir da série de cortes de um exame DICOM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O visualizador DICOM do OrthoCal é gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O download do app é gratuito, mas o visualizador DICOM requer assinatura, com 7 dias de teste grátis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para abrir uma tomografia CBCT completa no OrthoCal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O OrthoCal abre a série DICOM completa de um exame CBCT, com MPR e reconstrução 3D."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+<main id="main-content">
+
+<!-- ══ INTRO / HERO ══ -->
+<section id="intro-hero" style="background:var(--light);padding:100px 5vw 60px;text-align:center;">
+  <div style="max-width:820px;margin:0 auto;">
+    <img src="../orthocal-icon.png" alt="OrthoCal" style="width:72px;height:72px;border-radius:18px;margin-bottom:20px;box-shadow:0 8px 24px rgba(108,63,245,.25);">
+    <h1 data-i18n="dicom_h1" style="font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;color:var(--text);margin-bottom:20px;line-height:1.2;">Visualizador DICOM: tomografias e radiografias no celular</h1>
+    <p data-i18n="dicom_intro_p" style="font-size:1.1rem;color:var(--gray);margin-bottom:32px;line-height:1.7;">DICOM é o formato padrão para imagens médicas, incluindo tomografias CBCT usadas em ortodontia. O OrthoCal permite visualizar esses arquivos com suporte a MPR direto no celular ou no Mac.</p>
+    <a class="btn-primary" data-i18n="cta_download_btn" href="#cta-final">📲 Baixar o OrthoCal</a>
+  </div>
+</section>
+
+<div class="article-content">
+
+<h2 data-i18n="dicom_h2_1">O que é o formato DICOM</h2>
+<p data-i18n="dicom_p_1">DICOM (Digital Imaging and Communications in Medicine) é o padrão internacional para armazenar e transmitir imagens médicas, incluindo tomografias computadorizadas, ressonâncias e radiografias digitais. Diferente de uma imagem comum (JPEG ou PNG), um arquivo DICOM carrega, além do pixel da imagem, metadados como espessura de corte, orientação espacial e informações do exame.</p>
+<p data-i18n="dicom_p_2">Em ortodontia, o uso mais comum do DICOM está associado a exames de CBCT (tomografia computadorizada de feixe cônico), usados para avaliar estruturas ósseas, vias aéreas, posição de dentes inclusos e planejamento cirúrgico.</p>
+
+<h2 data-i18n="dicom_h2_2">O que é MPR e por que importa</h2>
+<p data-i18n="dicom_p_3">MPR (Multiplanar Reconstruction) é a técnica que permite reconstruir, a partir da série de cortes de um exame DICOM, as três vistas ortogonais clássicas: axial, sagital e coronal. Isso permite inspecionar a mesma estrutura anatômica sob diferentes ângulos sem precisar de um novo exame.</p>
+<p data-i18n="dicom_p_4">Sem suporte a MPR, um arquivo DICOM só pode ser visto corte a corte, na orientação original do exame — o que dificulta a avaliação completa de estruturas como o canal do nervo alveolar inferior ou a posição tridimensional de um dente incluso.</p>
+
+<h3 data-i18n="dicom_h3_1">Diferença entre DICOM 2D e a reconstrução 3D</h3>
+<p data-i18n="dicom_p_5">Além do MPR (que ainda trabalha em cortes 2D reconstruídos), é possível gerar uma reconstrução volumétrica 3D a partir da série DICOM completa — útil para visualizar a arcada e as estruturas ósseas como um modelo tridimensional navegável.</p>
+
+<h2 data-i18n="dicom_h2_3">Por que ortodontistas precisam de um visualizador DICOM</h2>
+<p data-i18n="dicom_p_6">Muitos softwares de visualização DICOM são pesados, voltados para radiologistas e exigem instalação em computador específico. No dia a dia clínico do ortodontista, isso significa depender de outro profissional ou de outro setor só para abrir uma tomografia já em posse do consultório.</p>
+
+<h2 data-i18n="dicom_h2_4">Como o OrthoCal visualiza arquivos DICOM</h2>
+<p data-i18n="dicom_p_7">O OrthoCal inclui um visualizador DICOM com suporte a MPR, permitindo abrir arquivos .dcm direto no celular ou no Mac, navegar pelos cortes axial, sagital e coronal, e usar essas imagens no planejamento ortodôntico sem depender de outro software instalado.</p>
+
+
+<h2 data-i18n="dicom_h2_5">Onde o OrthoCal entra</h2>
+<p data-i18n="dicom_p_8">O visualizador DICOM do OrthoCal abre arquivos .dcm com suporte a MPR direto no app, permitindo navegar pelos cortes axial, sagital e coronal de uma tomografia CBCT sem precisar de outro software instalado no consultório.</p>
+
+<h3 data-i18n="continue_exploring">Continue explorando</h3>
+<div class="internal-links">
+  <a href="/orthocal/cbct/" data-i18n="link_cbct">Tomografia CBCT</a>
+  <a href="/orthocal/reconstrucao-3d/" data-i18n="link_reconstrucao_3d">Reconstrução 3D</a>
+  <a href="/orthocal/stl-viewer/" data-i18n="link_stl_viewer">Visualizador STL</a>
+  <a href="../" data-i18n="link_home">Página inicial</a>
+  <a href="/orthocal/blog/" data-i18n="nav_blog">Blog</a>
+</div>
+</div>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="dicom_tag">DICOM no OrthoCal</div>
+    <h2 class="section-title" data-i18n="dicom_ben_h2">Tomografias direto no celular</h2>
+    <p class="section-sub" data-i18n="dicom_ben_sub">Sem depender de outro software de radiologia.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🔬</div>
+      <h3 data-i18n="dicom_benefit1_title">Suporte a MPR</h3>
+      <p data-i18n="dicom_benefit1_desc">Navegue pelos cortes axial, sagital e coronal da mesma tomografia.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🧊</div>
+      <h3 data-i18n="dicom_benefit2_title">Reconstrução 3D</h3>
+      <p data-i18n="dicom_benefit2_desc">Visualize a arcada e estruturas ósseas em três dimensões a partir do exame CBCT.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">👥</div>
+      <h3 data-i18n="dicom_benefit3_title">Vinculado ao paciente</h3>
+      <p data-i18n="dicom_benefit3_desc">Associe cada exame DICOM ao prontuário correspondente.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-i18n="dicom_benefit4_title">Também funciona offline</h3>
+      <p data-i18n="dicom_benefit4_desc">Assinantes ativos acessam o visualizador DICOM mesmo sem internet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+    <h2 class="section-title" data-i18n="faq_title">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="dicom_faq1_q">O que é um arquivo DICOM?</div>
+    <div class="faq-a" data-i18n="dicom_faq1_a">É o formato padrão para imagens médicas, como tomografias e radiografias digitais, que carrega tanto a imagem quanto metadados do exame.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="dicom_faq2_q">O que significa MPR em um visualizador DICOM?</div>
+    <div class="faq-a" data-i18n="dicom_faq2_a">MPR (Multiplanar Reconstruction) é a técnica que reconstrói as vistas axial, sagital e coronal a partir da série de cortes de um exame DICOM.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="dicom_faq3_q">O visualizador DICOM do OrthoCal é gratuito?</div>
+    <div class="faq-a" data-i18n="dicom_faq3_a">O download do app é gratuito, mas o visualizador DICOM requer assinatura, com 7 dias de teste grátis.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="dicom_faq4_q">Dá para abrir uma tomografia CBCT completa no OrthoCal?</div>
+    <div class="faq-a" data-i18n="dicom_faq4_a">Sim. O OrthoCal abre a série DICOM completa de um exame CBCT, com MPR e reconstrução 3D.</div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+<script src="../partials.js"></script>
+<script src="../index.js"></script>
+
+</body>
+</html>

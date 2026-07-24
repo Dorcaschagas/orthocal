@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Blog OrthoCal – Bolton, Moyers, Wolford, STL, DICOM e CBCT</title>
+  <meta name="description" content="Artigos sobre análise de Bolton, Moyers, Wolford, arquivos STL, DICOM e CBCT para ortodontistas que querem aprofundar o diagnóstico digital." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/blog/" />
+  <link rel="icon" type="image/png" href="../orthocal-icon.png" />
+  <link rel="apple-touch-icon" href="../orthocal-icon.png" />
+  <meta name="theme-color" content="#6c3ff5" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/blog/" />
+  <meta property="og:title" content="Blog OrthoCal – Conteúdo para Ortodontistas" />
+  <meta property="og:description" content="Artigos sobre análise de Bolton, Moyers, Wolford, arquivos STL, DICOM e CBCT para ortodontistas." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog OrthoCal – Conteúdo para Ortodontistas" />
+  <meta name="twitter:description" content="Artigos sobre análise de Bolton, Moyers, Wolford, arquivos STL, DICOM e CBCT para ortodontistas." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../style.css">
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "OrthoCal", "item": "https://sitedc.online/orthocal/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sitedc.online/orthocal/blog/" }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+
+<main id="main-content">
+
+<section id="blog-hero" style="max-width:900px;margin:0 auto;padding:64px 5vw 24px;text-align:center;">
+  <div class="section-tag" data-i18n="nav_blog">Blog</div>
+  <h1 class="section-title" data-i18n="blogindex_h1">Blog OrthoCal</h1>
+  <p class="section-sub" data-i18n="blogindex_intro_p" style="margin-left:auto;margin-right:auto;">Conteúdo educativo sobre análises ortodônticas e odontologia digital — Bolton, Moyers, Wolford, arquivos STL, DICOM e CBCT — para ortodontistas que querem aprofundar o diagnóstico e o planejamento clínico.</p>
+</section>
+
+<section id="blog-list" style="max-width:1100px;margin:0 auto;padding:24px 5vw 64px;">
+  <div class="benefits-grid">
+    <a href="/orthocal/blog/o-que-e-analise-de-bolton/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card1_title" style="margin-bottom:8px;">O que é a Análise de Bolton?</h3>
+      <p data-i18n="blogindex_card1_desc">Entenda como calcular a proporção mesiodistal entre dentes superiores e inferiores e identificar discrepâncias de tamanho dentário.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/como-funciona-analise-de-moyers/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card2_title" style="margin-bottom:8px;">Como Funciona a Análise de Moyers</h3>
+      <p data-i18n="blogindex_card2_desc">Descubra como prever o tamanho de caninos e pré-molares ainda não erupcionados na dentição mista.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/como-funciona-analise-de-wolford/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card3_title" style="margin-bottom:8px;">Como Funciona a Análise de Wolford</h3>
+      <p data-i18n="blogindex_card3_desc">Veja como diferenciar discrepâncias dentárias de esqueléticas no planejamento ortodôntico e cirúrgico.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/como-abrir-arquivos-stl-odontologicos/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card4_title" style="margin-bottom:8px;">Como Abrir Arquivos STL Odontológicos</h3>
+      <p data-i18n="blogindex_card4_desc">Entenda o formato STL, como é gerado por scanners intraorais e como visualizá-lo em qualquer dispositivo.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/o-que-e-dicom/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card5_title" style="margin-bottom:8px;">O que é DICOM?</h3>
+      <p data-i18n="blogindex_card5_desc">Conheça o padrão internacional de imagem médica usado em exames de CBCT e como visualizá-lo corretamente.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/o-que-e-cbct/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card6_title" style="margin-bottom:8px;">O que é CBCT?</h3>
+      <p data-i18n="blogindex_card6_desc">Saiba como funciona a tomografia de feixe cônico e seu papel no diagnóstico ortodôntico tridimensional.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/scanner-intraoral/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card7_title" style="margin-bottom:8px;">Scanner Intraoral: O que É e Vantagens</h3>
+      <p data-i18n="blogindex_card7_desc">Entenda como o scanner intraoral substitui a moldagem física e acelera o diagnóstico ortodôntico.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/modelos-digitais-na-ortodontia/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card8_title" style="margin-bottom:8px;">Modelos Digitais na Ortodontia</h3>
+      <p data-i18n="blogindex_card8_desc">Veja as vantagens dos modelos digitais sobre o gesso tradicional e como analisá-los corretamente.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/planejamento-ortodontico-digital/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card9_title" style="margin-bottom:8px;">Planejamento Ortodôntico Digital</h3>
+      <p data-i18n="blogindex_card9_desc">Conheça o fluxo completo que une scanner intraoral, análises automatizadas e exames DICOM.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+    <a href="/orthocal/blog/como-medir-modelos-stl/" class="benefit-card" style="text-decoration:none;color:inherit;display:block;">
+      <h3 data-i18n="blogindex_card10_title" style="margin-bottom:8px;">Como Medir Modelos STL na Ortodontia</h3>
+      <p data-i18n="blogindex_card10_desc">Aprenda a medir a largura mesiodistal dos dentes em modelos digitais com precisão.</p>
+      <span data-i18n="blog_read_more" style="color:var(--primary);font-weight:700;font-size:.9rem;display:inline-block;margin-top:12px;">Ler artigo →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+
+<script src="../partials.js"></script>
+<script src="../index.js"></script>
+
+</body>
+</html>

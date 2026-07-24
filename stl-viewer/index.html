@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Visualizador STL para Ortodontia no Celular | OrthoCal</title>
+  <meta name="description" content="Abra, gire e meça modelos STL de scanner intraoral direto no celular com o visualizador STL do OrthoCal. Sem precisar de computador." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://sitedc.online/orthocal/stl-viewer/" />
+  <link rel="icon" type="image/png" href="../orthocal-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sitedc.online/orthocal/stl-viewer/" />
+  <meta property="og:title" content="Visualizador STL — abra modelos 3D no celular | OrthoCal" />
+  <meta property="og:description" content="Abra, gire e meça modelos STL de scanner intraoral direto no celular com o visualizador STL do OrthoCal. Sem precisar de computador." />
+  <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Visualizador STL — abra modelos 3D no celular | OrthoCal" />
+  <meta name="twitter:description" content="Abra, gire e meça modelos STL de scanner intraoral direto no celular com o visualizador STL do OrthoCal. Sem precisar de computador." />
+  <meta name="twitter:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+  .article-content { max-width: 780px; margin: 0 auto; padding: 72px 5vw; }
+  .article-content h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 800; color:var(--text); margin: 40px 0 16px; }
+  .article-content h3 { font-size: 1.15rem; font-weight: 700; color:var(--text); margin: 28px 0 12px; }
+  .article-content p { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: 1.02rem; }
+  .article-content ul, .article-content ol { color: var(--gray); line-height: 1.8; margin: 0 0 20px 24px; }
+  .article-content li { margin-bottom: 8px; }
+  .article-content a { color: var(--primary); font-weight: 600; }
+  .internal-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .internal-links a { background: var(--primary-light); color: var(--primary-dark); padding: 8px 16px; border-radius: 20px; font-size: .9rem; font-weight: 600; text-decoration: none; }
+  .internal-links a:hover { background: var(--primary); color: #fff; }
+</style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "OrthoCal",
+      "item": "https://sitedc.online/orthocal/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Visualizador STL",
+      "item": "https://sitedc.online/orthocal/stl-viewer/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Visualizador STL",
+  "description": "Como funciona o visualizador STL do OrthoCal: abrir, rotacionar, dar zoom e medir modelos 3D de arcadas dentárias.",
+  "url": "https://sitedc.online/orthocal/stl-viewer/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "OrthoCal",
+    "url": "https://sitedc.online/orthocal/"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "OrthoCal",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "iOS, Android, macOS"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O visualizador STL do OrthoCal precisa de internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. Uma vez que o modelo STL é importado para o app, ele pode ser aberto, rotacionado e medido completamente offline."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá para medir dentes no visualizador STL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. O visualizador permite medir distâncias diretamente sobre o modelo 3D, o que pode ser usado nas análises de Bolton e Moyers do app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De onde vem o arquivo STL usado no OrthoCal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normalmente de um scanner intraoral usado na clínica, ou de um scanner de bancada que digitaliza um modelo de gesso tradicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O visualizador STL funciona no Mac também?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, o OrthoCal está disponível para iOS, Android e macOS, e o visualizador STL funciona nas três plataformas."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div id="nav-partial"></div>
+
+<main id="main-content">
+
+<!-- ══ INTRO / HERO ══ -->
+<section id="intro-hero" style="background:var(--light);padding:100px 5vw 60px;text-align:center;">
+  <div style="max-width:820px;margin:0 auto;">
+    <img src="../orthocal-icon.png" alt="OrthoCal" style="width:72px;height:72px;border-radius:18px;margin-bottom:20px;box-shadow:0 8px 24px rgba(108,63,245,.25);">
+    <h1 data-i18n="stlviewer_h1" style="font-size:clamp(1.8rem,4.5vw,3rem);font-weight:900;color:var(--text);margin-bottom:20px;line-height:1.2;">Visualizador STL: modelos 3D na palma da mão</h1>
+    <p data-i18n="stlviewer_intro_p" style="font-size:1.1rem;color:var(--gray);margin-bottom:32px;line-height:1.7;">O visualizador STL do OrthoCal permite abrir, rotacionar e medir modelos 3D de scanner intraoral diretamente no celular ou no Mac, sem precisar de um computador dedicado a CAD odontológico.</p>
+    <a class="btn-primary" data-i18n="cta_download_btn" href="#cta-final">📲 Baixar o OrthoCal</a>
+  </div>
+</section>
+
+<div class="article-content">
+
+<h2 data-i18n="stlviewer_h2_1">Por que ter um visualizador STL no celular</h2>
+<p data-i18n="stlviewer_p_1">Modelos STL de scanner intraoral costumam ser visualizados apenas em softwares de computador ligados ao próprio scanner. Isso significa que, para conferir um modelo durante uma consulta ou explicar um caso ao paciente, o ortodontista precisa estar na frente do computador certo, com o software certo instalado.</p>
+<p data-i18n="stlviewer_p_2">O visualizador STL do OrthoCal resolve esse problema: o modelo pode ser aberto direto no celular, no consultório, no meio de uma consulta, ou no Mac para uma apresentação mais detalhada.</p>
+
+<h2 data-i18n="stlviewer_h2_2">O que dá para fazer com o visualizador STL do OrthoCal</h2>
+<ul>
+  <li data-i18n="stlviewer_li_1"><strong>Rotação livre:</strong> gire o modelo em qualquer ângulo para inspecionar oclusão, apinhamento ou relação entre arcadas.</li>
+  <li data-i18n="stlviewer_li_2"><strong>Zoom:</strong> aproxime regiões específicas, como um dente isolado ou uma área de contato interproximal.</li>
+  <li data-i18n="stlviewer_li_3"><strong>Medição:</strong> meça distâncias diretamente sobre a superfície do modelo, útil para alimentar análises como Bolton.</li>
+  <li data-i18n="stlviewer_li_4"><strong>Comparação visual:</strong> use modelos de diferentes datas para acompanhar a evolução do tratamento.</li>
+</ul>
+
+<h3 data-i18n="stlviewer_h3_1">Como o modelo chega até o app</h3>
+<p data-i18n="stlviewer_p_3">O arquivo STL exportado do scanner intraoral (ou de um scanner de bancada, no caso de modelo de gesso digitalizado) pode ser importado para o OrthoCal e associado ao paciente correspondente, ficando disponível para consulta a qualquer momento, mesmo offline.</p>
+
+<h2 data-i18n="stlviewer_h2_3">Para que serve na prática clínica</h2>
+<p data-i18n="stlviewer_p_4">Além de servir como referência visual durante o planejamento, o visualizador STL é usado para:</p>
+<ol>
+  <li data-i18n="stlviewer_li_5">Explicar ao paciente, de forma visual, a condição atual da arcada;</li>
+  <li data-i18n="stlviewer_li_6">Conferir rapidamente um modelo antes de uma consulta, sem depender do computador do scanner;</li>
+  <li data-i18n="stlviewer_li_7">Extrair medidas diretamente para uso nas análises de Bolton, Wolford e Moyers do próprio app.</li>
+</ol>
+
+<h2 data-i18n="stlviewer_h2_4">Funciona sem internet</h2>
+<p data-i18n="stlviewer_p_5">O visualizador STL do OrthoCal funciona completamente offline. Uma vez que o modelo é importado, ele pode ser aberto, rotacionado e medido em qualquer lugar, mesmo sem conexão.</p>
+
+
+<h2 data-i18n="stlviewer_h2_5">Onde o OrthoCal entra</h2>
+<p data-i18n="stlviewer_p_6">O visualizador STL é uma funcionalidade central do OrthoCal: abre modelos de scanner intraoral direto no app, com rotação, zoom e medição, e conecta essas medições diretamente às análises de Bolton e Moyers, sem depender de outro software.</p>
+
+<h3 data-i18n="continue_exploring">Continue explorando</h3>
+<div class="internal-links">
+  <a href="/orthocal/stl/" data-i18n="link_stl">Arquivos STL Odontológicos</a>
+  <a href="/orthocal/bolton/" data-i18n="link_bolton">Análise de Bolton</a>
+  <a href="/orthocal/dicom/" data-i18n="link_dicom">Visualizador DICOM</a>
+  <a href="../" data-i18n="link_home">Página inicial</a>
+  <a href="/orthocal/blog/" data-i18n="nav_blog">Blog</a>
+</div>
+</div>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="stlviewer_tag">Visualizador STL</div>
+    <h2 class="section-title" data-i18n="stlviewer_ben_h2">Modelos 3D direto no celular</h2>
+    <p class="section-sub" data-i18n="stlviewer_ben_sub">Sem precisar do computador do scanner.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🖼️</div>
+      <h3 data-i18n="stlviewer_benefit1_title">Rotação e zoom</h3>
+      <p data-i18n="stlviewer_benefit1_desc">Inspecione o modelo 3D de qualquer ângulo, direto na tela do celular.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📐</div>
+      <h3 data-i18n="stlviewer_benefit2_title">Medição sobre o modelo</h3>
+      <p data-i18n="stlviewer_benefit2_desc">Meça distâncias direto na superfície do STL para alimentar as análises do app.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">👥</div>
+      <h3 data-i18n="stlviewer_benefit3_title">Associado ao paciente</h3>
+      <p data-i18n="stlviewer_benefit3_desc">Cada modelo importado fica salvo no prontuário correspondente.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-i18n="stlviewer_benefit4_title">Offline</h3>
+      <p data-i18n="stlviewer_benefit4_desc">Abra e manipule modelos STL mesmo sem internet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+    <h2 class="section-title" data-i18n="faq_title">Perguntas frequentes</h2>
+  </div>
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="stlviewer_faq1_q">O visualizador STL do OrthoCal precisa de internet?</div>
+    <div class="faq-a" data-i18n="stlviewer_faq1_a">Não. Uma vez que o modelo STL é importado para o app, ele pode ser aberto, rotacionado e medido completamente offline.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stlviewer_faq2_q">Dá para medir dentes no visualizador STL?</div>
+    <div class="faq-a" data-i18n="stlviewer_faq2_a">Sim. O visualizador permite medir distâncias diretamente sobre o modelo 3D, o que pode ser usado nas análises de Bolton e Moyers do app.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stlviewer_faq3_q">De onde vem o arquivo STL usado no OrthoCal?</div>
+    <div class="faq-a" data-i18n="stlviewer_faq3_a">Normalmente de um scanner intraoral usado na clínica, ou de um scanner de bancada que digitaliza um modelo de gesso tradicional.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="stlviewer_faq4_q">O visualizador STL funciona no Mac também?</div>
+    <div class="faq-a" data-i18n="stlviewer_faq4_a">Sim, o OrthoCal está disponível para iOS, Android e macOS, e o visualizador STL funciona nas três plataformas.</div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p_alt">Junte-se aos ortodontistas que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<div id="footer-partial"></div>
+<script src="../partials.js"></script>
+<script src="../index.js"></script>
+
+</body>
+</html>

@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('orthocal-theme');
+      if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO primário -->
@@ -10,15 +17,38 @@
   <meta name="keywords" content="análise stl ortodontia, bolton stl, wolford stl, scanner intraoral análise, orthocal stl, dental analysis stl, orthodontic stl app, stl, dicom, orthocal, app ortodontia, cadastro paciente ortodontia, software ortodontia, app dentista, ortho app, orthodontic software, orthodontic app, analises, ortodontica, calculadora ortodontica, STL viewer ortodontia, DICOM ortodontia, dentição mista, dentição permanente, ortocal, app ortodontista, visualizador STL, visualizador DICOM, calculo cefalometrico, intraoral scanner analysis, orthodontic 3d model, modelo 3d ortodontia" />
   <meta name="author" content="OrthoCal" />
   <meta name="google-site-verification" content="QGU-5zztFUfODQyUAWY5gloaXlTbIh2CbvkIHGiy5S4" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://sitedc.online/orthocal/" />
+  <link rel="alternate" hreflang="pt-BR" href="https://sitedc.online/orthocal/" />
+  <link rel="alternate" hreflang="en" href="https://sitedc.online/orthocal/" />
+  <link rel="alternate" hreflang="es" href="https://sitedc.online/orthocal/" />
+  <link rel="alternate" hreflang="x-default" href="https://sitedc.online/orthocal/" />
   <link rel="icon" type="image/png" href="orthocal-icon.png" />
+  <link rel="apple-touch-icon" href="orthocal-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#6c3ff5" />
+
+  <!-- Performance: preconnect/preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+  <link rel="dns-prefetch" href="https://api.qrserver.com" />
+  <link rel="preload" href="orthocal-icon.png" as="image" fetchpriority="high" />
+  <link rel="preload" href="style.css" as="style" />
 
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:site_name" content="OrthoCal" />
   <meta property="og:url" content="https://sitedc.online/orthocal/" />
   <meta property="og:title" content="OrthoCal – O App de Referência para Ortodontistas" />
   <meta property="og:description" content="Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes. O app mais completo para ortodontistas." />
   <meta property="og:image" content="https://sitedc.online/orthocal/orthocal-icon.png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -97,39 +127,79 @@
     ]
   }
   </script>
+
+  <!-- Schema.org – Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "OrthoCal",
+    "url": "https://sitedc.online/orthocal/",
+    "logo": "https://sitedc.online/orthocal/orthocal-icon.png",
+    "sameAs": [
+      "https://apps.apple.com/app/orthocal/id6636519508",
+      "https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org – Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "OrthoCal",
+        "item": "https://sitedc.online/orthocal/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org – Reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "OrthoCal",
+    "applicationCategory": "MedicalApplication",
+    "operatingSystem": "iOS, Android, macOS",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "13"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "RenataKato" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Facilita a vida do ortodontista!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Julianna P." },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+        "reviewBody": "Excelente aplicativo!!!"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
-<nav>
-  <a class="nav-logo" href="#" style="display:flex;align-items:center;gap:10px;">
-    <img src="orthocal-icon.png" alt="OrthoCal" style="width:36px;height:36px;border-radius:8px;">
-    OrthoCal
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#benefits" data-i18n="nav_features">Funcionalidades</a></li>
-    <li><a href="#videos" data-i18n="nav_demo">Demonstração</a></li>
-    <li><a href="#reviews" data-i18n="nav_reviews">Avaliações</a></li>
-    <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-switcher" role="group" aria-label="Language selector">
-      <button class="lang-btn active" data-lang="pt-BR" type="button">🇧🇷 PT</button>
-      <button class="lang-btn" data-lang="en" type="button">🇺🇸 EN</button>
-      <button class="lang-btn" data-lang="es" type="button">🇪🇸 ES</button>
-    </div>
-    <a class="nav-cta" href="#download" data-i18n="nav_cta">Baixar agora</a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div id="nav-partial"></div>
+
+<main id="main-content">
 
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-content">
     <div class="d-flex flex-column align-items-center">
-        <img src="orthocal-icon.png" alt="OrthoCal" style="width:96px;height:96px;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.4);">
+        <img src="orthocal-icon.png" alt="OrthoCal" width="96" height="96" fetchpriority="high" style="border-radius:22px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.4);">
         <div class="hero-badge" data-i18n="hero_badge">⭐ App #1 para Ortodontistas</div>
     </div>
     <h1 data-i18n="hero_h1">A calculadora para Análises<br /><span>mais completa do mercado</span></h1>
@@ -170,31 +240,31 @@
   <p class="section-sub" data-i18n="dl_sub">Baixe gratuitamente e comece a usar agora.</p>
   <div class="download-cards">
     <div class="dl-card">
-      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:52px;height:52px;"></div>
+      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="52" height="52" loading="lazy"></div>
       <div class="dl-platform" data-i18n="dl_platform_ios">iPhone &amp; iPad</div>
       <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_ios">iOS 14+</p> -->
-      <a href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code App Store" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
+      <a href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code App Store" width="120" height="120" style="border-radius:8px;display:block;margin:8px auto;" loading="lazy">
       </a>
-      <a class="dl-link" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" data-i18n="dl_store_ios">App Store</a>
+      <a class="dl-link" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener" data-i18n="dl_store_ios">App Store</a>
     </div>
     <div class="dl-card">
-      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" style="width:52px;height:52px;"></div>
+      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" alt="Google Play" width="52" height="52" loading="lazy"></div>
       <div class="dl-platform" data-i18n="dl_platform_android">Android</div>
       <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_android">Android 8+</p> -->
       <a href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Google Play" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Google Play" width="120" height="120" style="border-radius:8px;display:block;margin:8px auto;" loading="lazy">
       </a>
       <a class="dl-link" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" data-i18n="dl_store_android">Google Play</a>
     </div>
     <div class="dl-card">
-      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="macOS" style="width:44px;height:52px;filter:invert(1) brightness(0);"></div>
+      <div class="dl-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="macOS" width="44" height="52" style="filter:invert(1) brightness(0);" loading="lazy"></div>
       <div class="dl-platform" data-i18n="dl_platform_mac">macOS</div>
       <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_mac">macOS 11+</p> -->
-      <a href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Mac App Store" style="width:120px;height:120px;border-radius:8px;display:block;margin:8px auto;">
+      <a href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8&color=6c3ff5&bgcolor=ffffff&qzone=1&format=png" alt="QR Code Mac App Store" width="120" height="120" style="border-radius:8px;display:block;margin:8px auto;" loading="lazy">
       </a>
-      <a class="dl-link" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener" data-i18n="dl_store_mac">Mac App Store</a>
+      <a class="dl-link" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener" data-i18n="dl_store_mac">Mac App Store</a>
     </div>
   </div>
 </section>
@@ -306,7 +376,8 @@
         loading="lazy">
       </iframe>
     </div>
-    <div class="video-wrap video-wrap--vertical">
+    <!-- <div class="video-wrap video-wrap--vertical"> -->
+    <div class="video-wrap">
       <iframe
         src="https://www.youtube.com/embed/V58v2SarMi0?autoplay=1&mute=1&loop=1&playlist=V58v2SarMi0&rel=0"
         title="OrthoCal – Software Ortodontia"
@@ -349,73 +420,73 @@
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Facilita a vida do ortodontista!"</p>
           <div class="review-author">RenataKato</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store · v1.1.1</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="14" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> App Store · v1.1.1</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Excelente aplicativo!!!"</p>
           <div class="review-author">Julianna P.</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store · v1.0.9</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="14" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> App Store · v1.0.9</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Otimiza o tempo pra fazer as análises"</p>
           <div class="review-author">Batata Teca</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store · v1.0.9</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="14" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> App Store · v1.0.9</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Muito bom! 👏🏻👏🏻👏🏻"</p>
           <div class="review-author">Psico_Nick</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store · v1.0.3</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="14" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> App Store · v1.0.3</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Excelente aplicativo"</p>
           <div class="review-author">Victoria Zapata Chamorro</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.0.4</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.0.4</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Adorei essa contribuição, é ótima para economizar tempo!!"</p>
           <div class="review-author">Natalia Etchamendi</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.0.4</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.0.4</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Obrigado, excelente aplicativo, estou feliz."</p>
           <div class="review-author">Priorismile Iliana Paredes</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.0.4</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.0.4</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"O melhor aplicativo, ele simplifica sua vida."</p>
           <div class="review-author">Soph</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.0.9</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.0.9</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Excelente aplicativo 👍"</p>
           <div class="review-author">Diana Vergara Serrano</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.1.5</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.1.5</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Fácil de usar."</p>
           <div class="review-author">Ixchel Sanchez</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Excelente"</p>
           <div class="review-author">Lisbeth Rangel</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play · v1.0.4</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play · v1.0.4</div>
         </div>
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
           <p class="review-text">"Super"</p>
           <div class="review-author">Keyra Murillo Nash</div>
-          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play</div>
+          <div class="review-store"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play</div>
         </div>
       </div>
     </div>
@@ -466,27 +537,23 @@
   <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
   <p data-i18n="cta_p">Junte-se a todos os profissionais que já confiam no OrthoCal no dia a dia.</p>
   <div class="hero-btns">
-    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8 target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"> App Store
+    <a class="btn-primary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/App_Store_%28iOS%29.svg" alt="App Store" width="14" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> App Store
     </a>
     <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height:14px;vertical-align:middle;margin-right:4px;"> Google Play
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" height="14" style="vertical-align:middle;margin-right:4px;" loading="lazy"> Google Play
     </a>
-    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&ct=orthocal&mt=8" target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" style="width:14px;height:16px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Mac App Store
+    <a class="btn-secondary" href="https://apps.apple.com/app/apple-store/id6636519508?pt=127261300&amp;ct=orthocal&amp;mt=8" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple" width="14" height="16" style="vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);" loading="lazy"> Mac App Store
     </a>
   </div>
 </section>
 
+</main>
+
 <!-- ══ FOOTER ══ -->
-<footer>
-  <p style="margin-bottom:12px;">
-    <a href="https://sitedc.online/politicaPrivacidade/privacidadeorthocal.html" data-i18n="footer_privacy">Política de Privacidade</a>
-    <a href="https://sitedc.online/politicaPrivacidade/termosorthocal.html" data-i18n="footer_terms">Termos de Uso</a>
-    <!-- <a href="mailto:suporte@orthocal.app" data-i18n="footer_contact">Contato</a> -->
-  </p>
-  <p>© 2024 OrthoCal. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
-</footer>
+<div id="footer-partial"></div>
+<script src="partials.js"></script>
 <script src="index.js"></script>
 
 </body>
