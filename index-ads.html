@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO primário -->
+  <title>OrthoCal – Calculadora Ortodôntica | STL Viewer, DICOM, Dentição Mista e Permanente</title>
+  <meta name="description" content="OrthoCal é o app de referência para ortodontistas. Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes. Disponível no iOS, Android, macOS e Windows." />
+  <meta name="keywords" content="análise stl ortodontia, bolton stl, wolford stl, scanner intraoral análise, orthocal stl, dental analysis stl, orthodontic stl app, stl, dicom, orthocal, app ortodontia, cadastro paciente ortodontia, software ortodontia, app dentista, ortho app, orthodontic software, orthodontic app, analises, ortodontica, calculadora ortodontica, STL viewer ortodontia, DICOM ortodontia, dentição mista, dentição permanente, ortocal, app ortodontista, visualizador STL, visualizador DICOM, calculo cefalometrico, intraoral scanner analysis, orthodontic 3d model, modelo 3d ortodontia" />
+  <meta name="author" content="OrthoCal" />
+  <meta name="google-site-verification" content="QGU-5zztFUfODQyUAWY5gloaXlTbIh2CbvkIHGiy5S4" />
+  <link rel="icon" type="image/png" href="orthocal-icon.png" />
+
+  <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="OrthoCal – O App de Referência para Ortodontistas" />
+  <meta property="og:description" content="Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes. O app mais completo para ortodontistas." />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="OrthoCal – O App de Referência para Ortodontistas" />
+  <meta name="twitter:description" content="Calcule dentição mista e permanente, visualize STL e DICOM, gerencie pacientes." />
+  <style>
+    :root {
+    --primary: #6c3ff5;
+    --primary-dark: #4f2dcc;
+    --primary-light: #ede9ff;
+    --accent: #00c4a7;
+    --dark: #0f0f1a;
+    --gray: #6b7280;
+    --light: #f8f7ff;
+    --white: #ffffff;
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(108,63,245,0.12);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ede9ff;
+    padding: 0 3vw;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+}
+.nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--gray); font-size: .9rem; font-weight: 500; transition: color .2s; }
+.nav-links a:hover { color: var(--primary); }
+.nav-right {
+    display: flex; align-items: center; gap: 12px;
+}
+.nav-cta {
+    background: var(--primary); color: #fff; border: none; border-radius: 50px;
+    padding: 10px 24px; font-weight: 700; font-size: .9rem; cursor: pointer;
+    text-decoration: none; transition: background .2s;
+}
+.nav-cta:hover { background: var(--primary-dark); }
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher {
+    display: flex; align-items: center; gap: 4px;
+    background: rgba(108,63,245,.1);
+    border-radius: 50px;
+    padding: 4px;
+}
+.lang-btn {
+    background: transparent; border: none; border-radius: 50px;
+    padding: 5px 10px; font-size: .75rem; font-weight: 700;
+    cursor: pointer; color: var(--gray);
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+    line-height: 1;
+}
+.lang-btn:hover { color: var(--primary); }
+.lang-btn.active {
+    background: var(--white); color: var(--primary);
+    box-shadow: 0 1px 6px rgba(108,63,245,.2);
+}
+
+/* ── HAMBURGER ── */
+.nav-hamburger {
+    display: none;
+    flex-direction: column; justify-content: center; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: 4px; margin-left: 8px;
+}
+.nav-hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--primary); border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media(max-width:768px){
+    .nav-links {
+        display: none;
+        flex-direction: column; gap: 0;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        border-bottom: 1px solid #ede9ff;
+        padding: 8px 0;
+        z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a { display: block; padding: 12px 24px; font-size: 1rem; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .lang-btn { padding: 4px 7px; font-size: .7rem; }
+    .lang-switcher { gap: 2px; padding: 3px; }
+}
+
+/* ── HERO ── */
+#hero {
+    background: linear-gradient(135deg, #1a0b3e 0%, #2d1a6e 50%, #0d2d4a 100%);
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 80px 3vw 60px;
+    position: relative; overflow: hidden;
+}
+#hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(108,63,245,.35) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(0,196,167,.2) 0%, transparent 50%);
+}
+.hero-content { position: relative; max-width: 1200px; width: 100%; }
+.hero-badge {
+    display: inline-block; background: rgba(108,63,245,.3);
+    border: 1px solid rgba(108,63,245,.5); color: #c4b5fd;
+    padding: 6px 18px; border-radius: 50px; font-size: .8rem;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 24px;
+}
+#hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 20px;
+}
+#hero h1 span { color: #a78bfa; }
+#hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(255,255,255,.75); max-width: 580px; margin: 0 auto 40px;
+}
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+    background: var(--primary); color: #fff; padding: 16px 36px;
+    border-radius: 50px; font-weight: 800; font-size: 1rem;
+    text-decoration: none; display: flex; align-items: center; gap: 10px;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(108,63,245,.5);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,63,245,.6); }
+.btn-secondary {
+    background: rgba(255,255,255,.1); color: #fff; padding: 16px 36px;
+    border-radius: 50px; font-weight: 700; font-size: 1rem;
+    text-decoration: none; display: flex; align-items: center; gap: 10px;
+    border: 1px solid rgba(255,255,255,.25); transition: background .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.2); }
+.hero-stats {
+    display: flex; gap: 40px; justify-content: center; margin-top: 60px;
+    flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 900; color: #fff; }
+.stat-label { font-size: .85rem; color: rgba(255,255,255,.6); }
+
+/* ── DOWNLOAD ── */
+#download {
+    background: var(--light); padding: 80px 3vw; text-align: center;
+}
+.section-tag {
+    display: inline-block; background: var(--primary-light);
+    color: var(--primary); padding: 4px 16px; border-radius: 50px;
+    font-size: .8rem; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px;
+}
+.section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 12px; }
+.section-sub { color: var(--gray); max-width: 700px; margin: 0 auto 48px; }
+.download-cards {
+    display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;
+}
+.dl-card {
+    background: var(--white); border-radius: var(--radius); padding: 36px 32px;
+    width: 280px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    transition: transform .2s;
+}
+.dl-card:hover { transform: translateY(-6px); }
+.dl-icon { font-size: 3rem; }
+.dl-platform { font-weight: 800; font-size: 1.1rem; }
+.dl-link {
+    background: var(--primary); color: #fff; padding: 10px 24px;
+    border-radius: 50px; font-weight: 700; font-size: .9rem;
+    text-decoration: none; transition: background .2s; width: 100%; text-align: center;
+}
+.dl-link:hover { background: var(--primary-dark); }
+.dl-link.soon {
+    background: #e5e7eb; color: var(--gray); cursor: default; pointer-events: none;
+}
+
+/* ── BENEFITS ── */
+#benefits { padding: 80px 3vw; }
+.benefits-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px; max-width: 1400px; margin: 0 auto;
+}
+.benefit-card {
+    background: var(--light); border-radius: var(--radius); padding: 32px;
+    border: 2px solid transparent; transition: border .2s, box-shadow .2s;
+}
+.benefit-card:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+.benefit-icon {
+    width: 56px; height: 56px; background: var(--primary-light);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; margin-bottom: 20px;
+}
+.benefit-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; }
+.benefit-card p { color: var(--gray); font-size: .95rem; }
+
+
+/* ── REVIEWS ── */
+#reviews { padding: 80px 3vw; background: var(--light); text-align: center; }
+.carousel-outer { position: relative; max-width: 1400px; margin: 0 auto; }
+.carousel-track-wrap { overflow: hidden; padding: 8px 0; }
+.carousel-track {
+    display: flex; gap: 24px;
+    transition: transform .4s cubic-bezier(.4,0,.2,1);
+}
+.review-card {
+    background: var(--white); border-radius: var(--radius); padding: 28px;
+    box-shadow: 0 2px 16px rgba(0,0,0,.06); text-align: left;
+    min-width: 300px; flex-shrink: 0;
+}
+.review-stars { color: #f59e0b; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { color: var(--gray); font-size: .95rem; margin-bottom: 16px; font-style: italic; }
+.review-author { font-weight: 800; font-size: .9rem; }
+.review-store { font-size: .8rem; color: var(--gray); }
+.carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: var(--white); border: 2px solid #e5e7eb; border-radius: 50%;
+    width: 44px; height: 44px; font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,.1); transition: border-color .2s;
+    z-index: 2;
+}
+.carousel-btn:hover { border-color: var(--primary); }
+.carousel-btn.prev { left: -22px; }
+.carousel-btn.next { right: -22px; }
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+.carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #d1d5db; cursor: pointer; transition: background .2s, width .2s;
+    border: none;
+}
+.carousel-dot.active { background: var(--primary); width: 24px; border-radius: 4px; }
+.rating-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--primary); color: #fff; padding: 20px 28px;
+    border-radius: var(--radius); margin-bottom: 48px;
+    width: 280px; height: 120px; justify-content: center; box-sizing: border-box;
+}
+.rating-num { font-size: 2.5rem; font-weight: 900; }
+.rating-info { text-align: left; }
+.rating-info .stars { color: #fde68a; font-size: 1.2rem; }
+.rating-info small { font-size: .8rem; opacity: .8; }
+
+/* ── FAQ ── */
+#faq { padding: 80px 5vw; max-width: 1400px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #e5e7eb; padding: 20px 0; cursor: pointer; }
+.faq-q {
+    font-weight: 700; font-size: 1rem; display: flex;
+    justify-content: space-between; align-items: center;
+    user-select: none;
+}
+.faq-q::after { content: '+'; font-size: 1.4rem; color: var(--primary); transition: transform .2s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { color: var(--gray); font-size: .95rem; max-height: 0; overflow: hidden; transition: max-height .3s, padding .3s; }
+.faq-item.open .faq-a { max-height: 300px; padding-top: 12px; }
+
+/* ── CTA FINAL ── */
+#cta-final {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 100px 5vw; text-align: center;
+}
+#cta-final h2 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+#cta-final p { color: rgba(255,255,255,.8); font-size: 1.1rem; margin-bottom: 40px; }
+
+/* ── FOOTER ── */
+footer {
+    background: var(--dark); color: rgba(255,255,255,.5);
+    padding: 40px 5vw; text-align: center; font-size: .85rem;
+}
+footer a { color: rgba(255,255,255,.6); text-decoration: none; margin: 0 12px; }
+footer a:hover { color: #fff; }
+
+/* ── UTILS ── */
+.text-center { text-align: center; }
+
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.align-items-center { align-items: center; }
+
+/* ── MOBILE ── */
+@media(max-width:600px){
+    #hero { padding: 64px 5vw 48px; min-height: auto; }
+    #hero h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
+    .hero-stats { gap: 24px; margin-top: 40px; }
+    .stat-num { font-size: 1.5rem; }
+
+    #download { padding: 60px 5vw; }
+    .dl-card { width: 100%; max-width: 320px; padding: 28px 20px; }
+
+    #benefits { padding: 60px 5vw; }
+    .benefits-grid { grid-template-columns: 1fr; }
+
+    #reviews { padding: 60px 5vw; }
+    .rating-badge { width: 100%; max-width: 320px; }
+    .review-card { min-width: calc(100vw - 60px); }
+    .carousel-btn.prev { left: -12px; }
+    .carousel-btn.next { right: -12px; }
+
+    #faq { padding: 60px 5vw; }
+
+    #cta-final { padding: 60px 5vw; }
+    #cta-final .hero-btns { flex-direction: column; align-items: center; }
+    #cta-final .btn-primary, #cta-final .btn-secondary { width: 100%; max-width: 320px; justify-content: center; }
+
+    footer a { margin: 0 6px; }
+}
+
+@media(min-width:601px) and (max-width:768px){
+    .dl-card { width: calc(50% - 14px); min-width: 200px; }
+    .review-card { min-width: 260px; }
+    .carousel-btn.prev { left: -12px; }
+    .carousel-btn.next { right: -12px; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#" style="display:flex;align-items:center;gap:10px;">
+    <img src="orthocal-icon.png" alt="OrthoCal" style="width:36px;height:36px;border-radius:8px;">
+    OrthoCal
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#benefits" data-i18n="nav_features">Funcionalidades</a></li>
+    <li><a href="#reviews" data-i18n="nav_reviews">Avaliações</a></li>
+    <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Language selector">
+      <button class="lang-btn active" data-lang="pt-BR" type="button">🇧🇷 PT</button>
+      <button class="lang-btn" data-lang="en" type="button">🇺🇸 EN</button>
+      <button class="lang-btn" data-lang="es" type="button">🇪🇸 ES</button>
+    </div>
+    <a class="nav-cta" href="#download" data-i18n="nav_cta">Baixar agora</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="d-flex flex-column align-items-center">
+        <img src="orthocal-icon.png" alt="OrthoCal" style="width:96px;height:96px;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.4);">
+        <div class="hero-badge" data-i18n="hero_badge">⭐ App #1 para Ortodontistas</div>
+    </div>
+    <h1 data-i18n="hero_h1">A calculadora para Análises<br /><span>mais completa do mercado</span></h1>
+    <p data-i18n="hero_p">Dentição mista e permanente, visualizador STL e DICOM, gestão de pacientes, tudo em um único app. Usado por ortodontistas em mais de 15 países.</p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="#download" data-i18n="hero_btn1">
+        📲 Baixar agora
+      </a>
+      <a class="btn-secondary" href="#benefits" data-i18n="hero_btn2">
+        ▶ Ver demonstração
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">3 mil+</div>
+        <div class="stat-label" data-i18n="stat_downloads">Downloads</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4.9 ★</div>
+        <div class="stat-label" data-i18n="stat_rating">Avaliação média</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">15+</div>
+        <div class="stat-label" data-i18n="stat_countries">Países</div>
+      </div>
+      <!-- <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label" data-i18n="stat_platforms">Plataformas</div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOWNLOAD ══ -->
+<section id="download">
+  <div class="section-tag">Download</div>
+  <h2 class="section-title" data-i18n="dl_title">Disponível em todas as plataformas</h2>
+  <p class="section-sub" data-i18n="dl_sub">Baixe gratuitamente e comece a usar agora.</p>
+  <div class="download-cards">
+    <div class="dl-card">
+      <div class="dl-platform" data-i18n="dl_platform_ios">iPhone &amp; iPad</div>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_ios">iOS 14+</p> -->
+      <a href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener">
+      </a>
+      <a class="dl-link" href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener" data-i18n="dl_store_ios">App Store</a>
+    </div>
+    <div class="dl-card">
+      <div class="dl-platform" data-i18n="dl_platform_android">Android</div>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_android">Android 8+</p> -->
+      <a href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener">
+      </a>
+      <a class="dl-link" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" data-i18n="dl_store_android">Google Play</a>
+    </div>
+    <div class="dl-card">
+      <div class="dl-platform" data-i18n="dl_platform_mac">macOS</div>
+      <!-- <p style="color:var(--gray);font-size:.85rem;text-align:center;" data-i18n="dl_ver_mac">macOS 11+</p> -->
+      <a href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener">
+      </a>
+      <a class="dl-link" href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener" data-i18n="dl_store_mac">Mac App Store</a>
+    </div>
+    <div class="dl-card">
+      <div class="dl-platform" data-i18n="dl_platform_win">Windows</div>
+      <a href="https://apps.microsoft.com/store/detail/9N924FVL4X5M?cid=DevShareMCLPCS" target="_blank" rel="noopener">
+      </a>
+      <a class="dl-link" href="https://apps.microsoft.com/store/detail/9N924FVL4X5M?cid=DevShareMCLPCS" target="_blank" rel="noopener" data-i18n="dl_store_win">Microsoft Store</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENEFITS ══ -->
+<section id="benefits">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag" data-i18n="nav_features">Funcionalidades</div>
+    <h2 class="section-title" data-i18n="ben_title">Tudo que o ortodontista precisa</h2>
+    <p class="section-sub" data-i18n="ben_sub">Ferramentas desenvolvidas por e para profissionais de ortodontia.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-icon">🦷</div>
+      <h3 data-i18n="ben1_title">Dentição Mista</h3>
+      <p data-i18n="ben1_desc">Cálculo preciso do espaço disponível e necessário na dentição mista. Métodos de Moyers integrados.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">📐</div>
+      <h3 data-i18n="ben2_title">Dentição Permanente</h3>
+      <p data-i18n="ben2_desc">Análise completa da dentição permanente com cálculos de Bolton, discrepância ósseo-dentária.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🖼️</div>
+      <h3 data-i18n="ben3_title">Visualizador STL</h3>
+      <p data-i18n="ben3_desc">Abra e visualize modelos 3D no formato STL diretamente no app, com rotação, zoom e medições.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔬</div>
+      <h3 data-i18n="ben4_title">Visualizador DICOM</h3>
+      <p data-i18n="ben4_desc">Visualize tomografias e radiografias no formato DICOM com suporte a MPR.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">👥</div>
+      <h3 data-i18n="ben5_title">Gestão de Pacientes</h3>
+      <p data-i18n="ben5_desc">Cadastre e gerencie pacientes, vincule cálculos diretamente ao prontuário de cada paciente.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">✈️</div>
+      <h3 data-i18n="ben6_title">Funciona Offline</h3>
+      <p data-i18n="ben6_desc">Todos os cálculos e o visualizador STL funcionam sem internet. Use em qualquer lugar, sem depender de conexão.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🌍</div>
+      <h3 data-i18n="ben7_title">Multilíngue</h3>
+      <p data-i18n="ben7_desc">Interface disponível em Português, Inglês e Espanhol. Ideal para profissionais em qualquer país.</p>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-icon">🔄</div>
+      <h3 data-i18n="ben8_title">Multiplataforma</h3>
+      <p data-i18n="ben8_desc">iOS, Android, macOS e Windows. Use no celular no consultório e no computador para apresentações e estudos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section id="reviews">
+  <div class="section-tag" data-i18n="nav_reviews">Avaliações</div>
+  <h2 class="section-title" data-i18n="rev_title">O que os ortodontistas dizem</h2>
+  <!-- <p class="section-sub" data-i18n="rev_sub">Avaliações reais das lojas App Store e Google Play.</p> -->
+
+  <div style="display:flex;gap:16px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;">
+    <div class="rating-badge">
+      <div class="rating-num">5.0</div>
+      <div class="rating-info">
+        <div class="stars">★★★★★</div>
+        <div data-i18n="rev_store_ios">App Store · Brasil</div>
+      </div>
+    </div>
+    <div class="rating-badge" style="background:var(--accent);">
+      <div class="rating-num">5.0</div>
+      <div class="rating-info">
+        <div class="stars">★★★★★</div>
+        <div data-i18n="rev_store_android">Google Play</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-outer">
+    <button type="button" class="carousel-btn prev" aria-label="Anterior">&#8592;</button>
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="reviewTrack">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Facilita a vida do ortodontista!"</p>
+          <div class="review-author">RenataKato</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Excelente aplicativo!!!"</p>
+          <div class="review-author">Julianna P.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Otimiza o tempo pra fazer as análises"</p>
+          <div class="review-author">Batata Teca</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Muito bom! 👏🏻👏🏻👏🏻"</p>
+          <div class="review-author">Psico_Nick</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Excelente aplicativo"</p>
+          <div class="review-author">Victoria Zapata Chamorro</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Adorei essa contribuição, é ótima para economizar tempo!!"</p>
+          <div class="review-author">Natalia Etchamendi</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Obrigado, excelente aplicativo, estou feliz."</p>
+          <div class="review-author">Priorismile Iliana Paredes</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"O melhor aplicativo, ele simplifica sua vida."</p>
+          <div class="review-author">Soph</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Excelente aplicativo 👍"</p>
+          <div class="review-author">Diana Vergara Serrano</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Fácil de usar."</p>
+          <div class="review-author">Ixchel Sanchez</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Excelente"</p>
+          <div class="review-author">Lisbeth Rangel</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Super"</p>
+          <div class="review-author">Keyra Murillo Nash</div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="carousel-btn next" aria-label="Próximo">&#8594;</button>
+    <div class="carousel-dots" id="reviewDots"></div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="text-center" style="margin-bottom:48px;">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title" data-i18n="faq_title">Perguntas frequentes</h2>
+  </div>
+
+  <div class="faq-item open">
+    <div class="faq-q" data-i18n="faq1_q">O que é o OrthoCal?</div>
+    <div class="faq-a" data-i18n="faq1_a">OrthoCal é um aplicativo para ortodontistas que reúne cálculos de dentição mista e permanente, visualizador de modelos STL, visualizador DICOM com MPR e gestão de pacientes em um único app.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="faq2_q">O app é gratuito?</div>
+    <div class="faq-a" data-i18n="faq2_a">Sim, o download é gratuito. Os cálculos de dentição mista e permanente são completamente gratuitos. O Visualizador DICOM e STL requer uma assinatura com 7 dias grátis.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="faq3_q">Funciona sem internet?</div>
+    <div class="faq-a" data-i18n="faq3_a">Sim. Todos os cálculos de dentição e o visualizador STL funcionam offline. Assinantes ativos também acessam o DICOM Viewer sem internet.</div>
+  </div>
+  <!-- <div class="faq-item">
+    <div class="faq-q" data-i18n="faq4_q">Quais plataformas são suportadas?</div>
+    <div class="faq-a" data-i18n="faq4_a">iOS (iPhone e iPad), Android, macOS e Windows.</div>
+  </div> -->
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="faq5_q">Quais formatos de arquivo são suportados?</div>
+    <div class="faq-a" data-i18n="faq5_a">O OrthoCal suporta arquivos STL para modelos 3D e arquivos DICOM (.dcm) para tomografias e radiografias digitais.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="faq6_q">Posso cancelar a assinatura quando quiser?</div>
+    <div class="faq-a" data-i18n="faq6_a">Sim. Você pode cancelar a assinatura a qualquer momento diretamente nas configurações da App Store ou Google Play.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" data-i18n="faq7_q">O app está disponível em outros idiomas?</div>
+    <div class="faq-a" data-i18n="faq7_a">Sim. O OrthoCal está disponível em Português, Inglês e Espanhol. O idioma é detectado automaticamente.</div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <h2 data-i18n="cta_h2">Comece a usar hoje</h2>
+  <p data-i18n="cta_p">Junte-se a todos os profissionais que já confiam no OrthoCal no dia a dia.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener" style="background:#fff;color:var(--primary);">
+    </a>
+    <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.dorcaschagas.calculadora" target="_blank" rel="noopener" style="background:rgba(255,255,255,.15);">
+    </a>
+    <a class="btn-secondary" href="https://apps.apple.com/app/orthocal/id6636519508" target="_blank" rel="noopener">
+    </a>
+    <a class="btn-secondary" href="https://apps.microsoft.com/store/detail/9N924FVL4X5M?cid=DevShareMCLPCS" target="_blank" rel="noopener">
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p style="margin-bottom:12px;">
+    <a href="https://sitedc.online/politicaPrivacidade/privacidadeorthocal.html" data-i18n="footer_privacy">Política de Privacidade</a>
+    <a href="https://sitedc.online/politicaPrivacidade/termosorthocal.html" data-i18n="footer_terms">Termos de Uso</a>
+    <!-- <a href="mailto:suporte@orthocal.app" data-i18n="footer_contact">Contato</a> -->
+  </p>
+  <p>© 2024 OrthoCal. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+</footer>
+<script>
+
+  // ══════════════════════════════════════════
+//  i18n – Translations
+// ══════════════════════════════════════════
+const translations = {
+    'pt-BR': {
+        nav_features: 'Funcionalidades',
+        nav_demo: 'Demonstração',
+        nav_reviews: 'Avaliações',
+        nav_faq: 'FAQ',
+        nav_cta: 'Baixar agora',
+
+        hero_badge: '⭐ App #1 para Ortodontistas',
+        hero_h1: 'A calculadora para Análises<br /><span>mais completa do mercado</span>',
+        hero_p: 'Análise de Bolton, Wolford e Moyers, visualizador STL para scanner intraoral, DICOM/CBCT com MPR e gestão de pacientes, tudo em um único app. Usado por ortodontistas em mais de 15 países.',
+        hero_btn1: '📲 Baixar agora',
+        hero_btn2: '▶ Ver demonstração',
+
+        stat_downloads: 'Downloads',
+        stat_rating: 'Avaliação média',
+        stat_countries: 'Países',
+        stat_platforms: 'Plataformas',
+
+        dl_title: 'Disponível em todas as plataformas',
+        dl_sub: 'Baixe gratuitamente e comece a usar agora.',
+        dl_platform_ios: 'iPhone & iPad',
+        dl_ver_ios: 'iOS 14+',
+        dl_store_ios: 'App Store',
+        dl_platform_android: 'Android',
+        dl_ver_android: 'Android 8+',
+        dl_store_android: 'Google Play',
+        dl_platform_mac: 'macOS',
+        dl_ver_mac: 'macOS 11+',
+        dl_store_mac: 'Mac App Store',
+        dl_platform_win: 'Windows',
+        dl_store_win: 'Microsoft Store',
+
+        ben_title: 'Tudo que o ortodontista precisa',
+        ben_sub: 'Ferramentas desenvolvidas por e para profissionais de ortodontia.',
+        ben1_title: 'Dentição Mista',
+        ben1_desc: 'Cálculo preciso do espaço disponível e necessário na dentição mista. Métodos de Moyers integrados.',
+        ben2_title: 'Dentição Permanente',
+        ben2_desc: 'Análise completa da dentição permanente com cálculos de Bolton, discrepância ósseo-dentária',
+        ben3_title: 'Visualizador STL',
+        ben3_desc: 'Abra e visualize modelos 3D no formato STL diretamente no app, com rotação, zoom e medições',
+        ben4_title: 'Visualizador DICOM',
+        ben4_desc: 'Visualize tomografias e radiografias no formato DICOM com suporte a MPR.',
+        ben5_title: 'Gestão de Pacientes',
+        ben5_desc: 'Cadastre e gerencie pacientes, vincule cálculos diretamente ao prontuário de cada paciente.',
+        ben6_title: 'Funciona Offline',
+        ben6_desc: 'Todos os cálculos e o visualizador STL funcionam sem internet. Use em qualquer lugar, sem depender de conexão.',
+        ben7_title: 'Multilíngue',
+        ben7_desc: 'Interface disponível em Português, Inglês e Espanhol. Ideal para profissionais em qualquer país.',
+        ben8_title: 'Multiplataforma',
+        ben8_desc: 'iOS, Android, macOS e Windows. Use no celular no consultório e no computador para apresentações e estudos.',
+
+        vid_title: 'Veja o OrthoCal em ação',
+        vid_sub: 'Assista e veja como é simples usar no dia a dia do consultório.',
+
+        rev_title: 'O que os ortodontistas dizem',
+        rev_sub: 'Avaliações reais das lojas App Store e Google Play.',
+        rev_store_ios: 'App Store · Brasil',
+        rev_store_android: 'Google Play',
+
+        faq_title: 'Perguntas frequentes',
+        faq1_q: 'O que é o OrthoCal?',
+        faq1_a: 'OrthoCal é um aplicativo para ortodontistas que reúne cálculos de dentição mista e permanente, visualizador de modelos STL, visualizador DICOM com MPR e gestão de pacientes em um único app.',
+        faq2_q: 'O app é gratuito?',
+        faq2_a: 'Sim, o download é gratuito. Os cálculos de dentição mista e permanente são completamente gratuitos. O Visualizador DICOM e STL requer uma assinatura com 7 dias grátis.',
+        faq3_q: 'Funciona sem internet?',
+        faq3_a: 'Sim. Todos os cálculos de dentição e o visualizador STL funcionam offline. Assinantes ativos também acessam o DICOM Viewer sem internet.',
+        faq4_q: 'Quais plataformas são suportadas?',
+        faq4_a: 'iOS (iPhone e iPad com iOS 14+), Android (8+), macOS (11+) e Windows.',
+        faq5_q: 'Quais formatos de arquivo são suportados?',
+        faq5_a: 'O OrthoCal suporta arquivos STL para modelos 3D e arquivos DICOM (.dcm) para tomografias e radiografias digitais.',
+        faq6_q: 'Posso cancelar a assinatura quando quiser?',
+        faq6_a: 'Sim. Você pode cancelar a assinatura a qualquer momento diretamente nas configurações da App Store ou Google Play.',
+        faq7_q: 'O app está disponível em outros idiomas?',
+        faq7_a: 'Sim. O OrthoCal está disponível em Português, Inglês e Espanhol. O idioma é detectado automaticamente.',
+
+        cta_h2: 'Comece a usar hoje',
+        cta_p: 'Junte-se a todos os profissionais que já confiam no OrthoCal no dia a dia.',
+
+        footer_privacy: 'Política de Privacidade',
+        footer_terms: 'Termos de Uso',
+        footer_contact: 'Contato',
+        footer_rights: 'Todos os direitos reservados.'
+    },
+
+    'en': {
+        nav_features: 'Features',
+        nav_demo: 'Demo',
+        nav_reviews: 'Reviews',
+        nav_faq: 'FAQ',
+        nav_cta: 'Download now',
+
+        hero_badge: '⭐ #1 App for Orthodontists',
+        hero_h1: 'The analysis calculator<br /><span>most complete on the market</span>',
+        hero_p: 'Mixed and permanent dentition, STL and DICOM viewer, patient management, all in one app. Used by orthodontists in over 15 countries.',
+        hero_btn1: '📲 Download now',
+        hero_btn2: '▶ Watch demo',
+
+        stat_downloads: 'Downloads',
+        stat_rating: 'Average rating',
+        stat_countries: 'Countries',
+        stat_platforms: 'Platforms',
+
+        dl_title: 'Available on all platforms',
+        dl_sub: 'Download for free and start using now.',
+        dl_platform_ios: 'iPhone & iPad',
+        dl_ver_ios: 'iOS 14+',
+        dl_store_ios: 'App Store',
+        dl_platform_android: 'Android',
+        dl_ver_android: 'Android 8+',
+        dl_store_android: 'Google Play',
+        dl_platform_mac: 'macOS',
+        dl_ver_mac: 'macOS 11+',
+        dl_store_mac: 'Mac App Store',
+        dl_platform_win: 'Windows',
+        dl_store_win: 'Microsoft Store',
+
+        ben_title: 'Everything the orthodontist needs',
+        ben_sub: 'Tools developed by and for orthodontic professionals.',
+        ben1_title: 'Mixed Dentition',
+        ben1_desc: 'Precise calculation of available and required space in mixed dentition. Moyers methods integrated.',
+        ben2_title: 'Permanent Dentition',
+        ben2_desc: 'Complete analysis of permanent dentition with Bolton calculations, bone-dental discrepancy.',
+        ben3_title: 'STL Viewer',
+        ben3_desc: 'Open and view 3D models in STL format directly in the app, with rotation, zoom and measurements.',
+        ben4_title: 'DICOM Viewer',
+        ben4_desc: 'View CT scans and X-rays in DICOM format with MPR support.',
+        ben5_title: 'Patient Management',
+        ben5_desc: "Register and manage patients, link calculations directly to each patient's record.",
+        ben6_title: 'Works Offline',
+        ben6_desc: 'All calculations and the STL viewer work without internet. Use anywhere, without depending on a connection.',
+        ben7_title: 'Multilingual',
+        ben7_desc: 'Interface available in Portuguese, English and Spanish. Ideal for professionals in any country.',
+        ben8_title: 'Multiplatform',
+        ben8_desc: 'iOS, Android, macOS and Windows. Use on your phone in the office and on your computer for presentations and studies.',
+
+        vid_title: 'See OrthoCal in action',
+        vid_sub: 'Watch and see how simple it is to use in daily practice.',
+
+        rev_title: 'What orthodontists say',
+        rev_sub: 'Real reviews from App Store and Google Play.',
+        rev_store_ios: 'App Store · Brazil',
+        rev_store_android: 'Google Play',
+
+        faq_title: 'Frequently asked questions',
+        faq1_q: 'What is OrthoCal?',
+        faq1_a: 'OrthoCal is an app for orthodontists that brings together mixed and permanent dentition calculations, STL model viewer, DICOM viewer with MPR and patient management in one app.',
+        faq2_q: 'Is the app free?',
+        faq2_a: 'Yes, the download is free. Mixed and permanent dentition calculations are completely free. The DICOM Viewer requires a subscription with 7 days free.',
+        faq3_q: 'Does it work offline?',
+        faq3_a: 'Yes. All dentition calculations and the STL viewer work offline. Active subscribers also access the DICOM Viewer without internet.',
+        faq4_q: 'Which platforms are supported?',
+        faq4_a: 'iOS (iPhone and iPad with iOS 14+), Android (8+), macOS (11+) and Windows.',
+        faq5_q: 'Which file formats are supported?',
+        faq5_a: 'OrthoCal supports STL files for 3D models and DICOM (.dcm) files for CT scans and digital X-rays.',
+        faq6_q: 'Can I cancel my subscription anytime?',
+        faq6_a: 'Yes. You can cancel your subscription at any time directly in the App Store or Google Play settings.',
+        faq7_q: 'Is the app available in other languages?',
+        faq7_a: 'Yes. OrthoCal is available in Portuguese, English and Spanish. The language is detected automatically.',
+
+        cta_h2: 'Start using today',
+        cta_p: 'Join all the professionals who already trust OrthoCal in their daily practice.',
+
+        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Terms of Use',
+        footer_contact: 'Contact',
+        footer_rights: 'All rights reserved.'
+    },
+
+    'es': {
+        nav_features: 'Funcionalidades',
+        nav_demo: 'Demostración',
+        nav_reviews: 'Reseñas',
+        nav_faq: 'FAQ',
+        nav_cta: 'Descargar',
+
+        hero_badge: '⭐ App #1 para Ortodoncistas',
+        hero_h1: 'La calculadora para Análisis<br /><span>más completa del mercado</span>',
+        hero_p: 'Dentición mixta y permanente, visor STL y DICOM, gestión de pacientes, todo en una sola app. Usada por ortodoncistas en más de 15 países.',
+        hero_btn1: '📲 Descargar ahora',
+        hero_btn2: '▶ Ver demostración',
+
+        stat_downloads: 'Descargas',
+        stat_rating: 'Valoración media',
+        stat_countries: 'Países',
+        stat_platforms: 'Plataformas',
+
+        dl_title: 'Disponible en todas las plataformas',
+        dl_sub: 'Descarga gratis y empieza a usar ahora.',
+        dl_platform_ios: 'iPhone & iPad',
+        dl_ver_ios: 'iOS 14+',
+        dl_store_ios: 'App Store',
+        dl_platform_android: 'Android',
+        dl_ver_android: 'Android 8+',
+        dl_store_android: 'Google Play',
+        dl_platform_mac: 'macOS',
+        dl_ver_mac: 'macOS 11+',
+        dl_store_mac: 'Mac App Store',
+        dl_platform_win: 'Windows',
+        dl_store_win: 'Microsoft Store',
+
+        ben_title: 'Todo lo que el ortodoncista necesita',
+        ben_sub: 'Herramientas desarrolladas por y para profesionales de ortodoncia.',
+        ben1_title: 'Dentición Mixta',
+        ben1_desc: 'Cálculo preciso del espacio disponible y necesario en la dentición mixta. Métodos de Moyers integrados.',
+        ben2_title: 'Dentición Permanente',
+        ben2_desc: 'Análisis completo de la dentición permanente con cálculos de Bolton, discrepancia óseo-dentaria.',
+        ben3_title: 'Visor STL',
+        ben3_desc: 'Abre y visualiza modelos 3D en formato STL directamente en la app, con rotación, zoom y mediciones.',
+        ben4_title: 'Visor DICOM',
+        ben4_desc: 'Visualiza tomografías y radiografías en formato DICOM con soporte MPR.',
+        ben5_title: 'Gestión de Pacientes',
+        ben5_desc: 'Registra y gestiona pacientes, vincula cálculos directamente al expediente de cada paciente.',
+        ben6_title: 'Funciona Sin Internet',
+        ben6_desc: 'Todos los cálculos y el visor STL funcionan sin internet. Úsalo en cualquier lugar.',
+        ben7_title: 'Multilingüe',
+        ben7_desc: 'Interfaz disponible en Portugués, Inglés y Español. Ideal para profesionales en cualquier país.',
+        ben8_title: 'Multiplataforma',
+        ben8_desc: 'iOS, Android, macOS y Windows. Úsalo en el celular en el consultorio y en la computadora para presentaciones.',
+
+        vid_title: 'Ve OrthoCal en acción',
+        vid_sub: 'Mira lo simple que es usar en el día a día del consultorio.',
+
+        rev_title: 'Lo que dicen los ortodoncistas',
+        rev_sub: 'Reseñas reales de App Store y Google Play.',
+        rev_store_ios: 'App Store · Brasil',
+        rev_store_android: 'Google Play',
+
+        faq_title: 'Preguntas frecuentes',
+        faq1_q: '¿Qué es OrthoCal?',
+        faq1_a: 'OrthoCal es una app para ortodoncistas que reúne cálculos de dentición mixta y permanente, visor de modelos STL, visor DICOM con MPR y gestión de pacientes en una sola app.',
+        faq2_q: '¿La app es gratuita?',
+        faq2_a: 'Sí, la descarga es gratuita. Los cálculos de dentición mixta y permanente son completamente gratuitos. El Visor DICOM requiere una suscripción con 7 días gratis.',
+        faq3_q: '¿Funciona sin internet?',
+        faq3_a: 'Sí. Todos los cálculos de dentición y el visor STL funcionan offline. Los suscriptores activos también acceden al Visor DICOM sin internet.',
+        faq4_q: '¿Qué plataformas son compatibles?',
+        faq4_a: 'iOS (iPhone y iPad con iOS 14+), Android (8+), macOS (11+) y Windows.',
+        faq5_q: '¿Qué formatos de archivo son compatibles?',
+        faq5_a: 'OrthoCal soporta archivos STL para modelos 3D y archivos DICOM (.dcm) para tomografías y radiografías digitales.',
+        faq6_q: '¿Puedo cancelar la suscripción cuando quiera?',
+        faq6_a: 'Sí. Puedes cancelar la suscripción en cualquier momento directamente en la configuración de App Store o Google Play.',
+        faq7_q: '¿La app está disponible en otros idiomas?',
+        faq7_a: 'Sí. OrthoCal está disponible en Portugués, Inglés y Español. El idioma se detecta automáticamente.',
+
+        cta_h2: 'Empieza a usar hoy',
+        cta_p: 'Únete a todos los profesionales que ya confían en OrthoCal en su día a día.',
+
+        footer_privacy: 'Política de Privacidad',
+        footer_terms: 'Términos de Uso',
+        footer_contact: 'Contacto',
+        footer_rights: 'Todos los derechos reservados.'
+    }
+};
+
+// Keys whose values contain HTML markup (use innerHTML, not textContent)
+const htmlKeys = new Set(['hero_h1']);
+
+function detectLang() {
+    const stored = localStorage.getItem('orthocal-lang');
+    if (stored && translations[stored]) return stored;
+    const browser = (navigator.language || navigator.userLanguage || 'pt-BR').toLowerCase();
+    if (browser.startsWith('pt')) return 'pt-BR';
+    if (browser.startsWith('es')) return 'es';
+    if (browser.startsWith('en')) return 'en';
+    return 'pt-BR';
+}
+
+function applyLang(lang) {
+    const t = translations[lang] || translations['pt-BR'];
+
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+            if (htmlKeys.has(key)) {
+                el.innerHTML = t[key];
+            } else {
+                el.textContent = t[key];
+            }
+        }
+    });
+
+    // Update <html lang> attribute
+    document.documentElement.lang = lang;
+
+    // Highlight the active switcher button
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // Persist choice
+    localStorage.setItem('orthocal-lang', lang);
+}
+
+// Wire up language switcher buttons
+document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        applyLang(btn.getAttribute('data-lang'));
+    });
+});
+
+// Apply language on page load
+applyLang(detectLang());
+
+
+// ══════════════════════════════════════════
+//  FAQ accordion
+// ══════════════════════════════════════════
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+// Intersection Observer para animações suaves
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.benefit-card, .dl-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+});
+
+// ── Carrossel de reviews ──
+const track = document.getElementById('reviewTrack');
+const dotsContainer = document.getElementById('reviewDots');
+const cards = track.querySelectorAll('.review-card');
+const cardW = () => cards[0].offsetWidth + 24; // largura + gap
+const visible = () => Math.floor(track.parentElement.offsetWidth / cardW());
+const total = cards.length;
+let current = 0;
+let autoTimer;
+
+// Cria dots
+const numDots = () => total - visible() + 1;
+function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < numDots(); i++) {
+        const d = document.createElement('button');
+        d.type = 'button';
+        d.className = 'carousel-dot' + (i === current ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+    }
+}
+
+function goTo(idx) {
+    const max = Math.max(0, total - visible());
+    current = Math.max(0, Math.min(idx, max));
+    track.style.transform = `translateX(-${current * cardW()}px)`;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+    });
+}
+
+function next() { goTo(current + 1 >= numDots() ? 0 : current + 1); }
+function prev() { goTo(current - 1 < 0 ? numDots() - 1 : current - 1); }
+
+function startAuto() { autoTimer = setInterval(next, 3500); }
+function stopAuto() { clearInterval(autoTimer); }
+
+document.querySelector('.carousel-btn.next').addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+document.querySelector('.carousel-btn.prev').addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+
+// swipe touch
+let touchX = 0;
+track.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; stopAuto(); });
+track.addEventListener('touchend', e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    startAuto();
+});
+
+buildDots();
+startAuto();
+window.addEventListener('resize', () => { buildDots(); goTo(0); });
+</script>
+
+</body>
+</html>
